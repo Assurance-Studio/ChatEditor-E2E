@@ -1,0 +1,58 @@
+<ChatPCSettings>
+	<SystemSettings>
+		<SoftwareVersion>2.48.0</SoftwareVersion>
+		<ActiveUserProfile>DefaultUser</ActiveUserProfile>
+		<EditMode>0</EditMode>
+		<ScreenResolutionID>70</ScreenResolutionID>
+		<VoxFunc>0</VoxFunc>
+		<PCSFunc>1</PCSFunc>
+		<MetacomFunc>1</MetacomFunc>
+		<LastNCEUpdateFile></LastNCEUpdateFile>
+		<CEWinSize>83886969</CEWinSize>
+		<CEWinLocationX>640</CEWinLocationX>
+		<CEWinLocationY>245</CEWinLocationY>
+	</SystemSettings>
+	<DefaultUser>
+		<LanguageID>0</LanguageID>
+		<SpeakChar>0</SpeakChar>
+		<SpeakWord>1</SpeakWord>
+		<SpeakSentence>1</SpeakSentence>
+		<AutoClear>1</AutoClear>
+		<SpeechOff>0</SpeechOff>
+		<StretchTransImages>1</StretchTransImages>
+		<StretchNonTransImages>1</StretchNonTransImages>
+		<AutoCap>1</AutoCap>
+		<ShowButtonPress>1</ShowButtonPress>
+		<LastCMUsed>C:\Program Files (x86)\Chat Editor\Vocabulary\English\SymbolStix\4-Basic SS.c4v</LastCMUsed>
+		<ButtonModifier>1</ButtonModifier>
+		<ProcessAbbreviations>1</ProcessAbbreviations>
+		<SpeakAbbreviations>1</SpeakAbbreviations>
+		<ProcessPronounciations>1</ProcessPronounciations>
+		<ShowHiddenButtons>0</ShowHiddenButtons>
+		<SDBSingleLine>1</SDBSingleLine>
+		<SDBHeight>40</SDBHeight>
+		<SDBFontColor>0</SDBFontColor>
+		<SDBBgndColor>16777215</SDBBgndColor>
+		<SDBFontName>Istok Web</SDBFontName>
+		<SDBFontHeight>20</SDBFontHeight>
+		<SDBOnTop>1</SDBOnTop>
+		<SDBVisible>1</SDBVisible>
+		<SDBTapToSpeak>1</SDBTapToSpeak>
+		<SDBSpeakBuffer>0</SDBSpeakBuffer>
+		<SDictEnabled>1</SDictEnabled>
+		<SDictOption>0</SDictOption>
+		<SDictUUID>62c30de0-4be8-4279-8558-5273898aeff9</SDictUUID>
+		<APSpkMessage>1</APSpkMessage>
+		<ImageHeight>200</ImageHeight>
+		<ImageWidth>200</ImageWidth>
+		<DECTalkRate>0</DECTalkRate>
+		<SAPIVoice>Microsoft David Desktop - English (United States)</SAPIVoice>
+		<DECTalkPitch>0</DECTalkPitch>
+		<ShowButtonImage>1</ShowButtonImage>
+		<TextOverImage>0</TextOverImage>
+		<BtnModSize>2</BtnModSize>
+		<GF_Percent>75</GF_Percent>
+		<GF_Btn>1</GF_Btn>
+		<SavePageAsPNG></SavePageAsPNG>
+	</DefaultUser>
+</ChatPCSettings>
