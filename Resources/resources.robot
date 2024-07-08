@@ -36,6 +36,8 @@ ${english&Nederlands}                            name:"English & Nederlands"
 ${english&Français}                              name:"English & Français"
 ${english&Deutsch}                               name:"English & Deutsch"
 ${english&Español}                               name:"English & Español"
+${english&Arabic}                                name:"English & Arabic"
+${english&Hebrew}                                name:"English & Hebrew"
 
 # Symbol Sets
 ${symbolStix}                                    name:SymbolStix
@@ -194,6 +196,16 @@ ${wordPower48EspanolBasicoPCS}                   name:"WordPower48 Español Bás
 ${wordPower48EspanolPCS}                         name:"WordPower48 Español PCS"
 ${wordPower60EspanolBasicoPCS}                   name:"WordPower60 Español Básico PCS"
 
+# English&Arabic vocabularies
+${referendumBoard16}                             name:"	لوحة استثفاء 16"
+${adultPanel20}                                  name:"لوحة البالغين 20"
+${keyboardWithAddOns}                            name:"لوحة المفاتيح مع إضافات"
+${focusSharePanel16}                             name:"لوحة حصة التركيز 16"
+${panel4}                                        name:"لوحة ٤ 4"
+${panel9}                                        name:"لوحة ٩ 9"
+${panel12}                                       name:"لوحة ١٢ 12"
+${panel15}                                       name:"لوحة ١٥ 15"
+
 # ----------------------------------CONFIGURATION LANGUAGES-----------------------------------------------------
 ${configuration}                                 name:"Create New Configuration"
 ${window}                                        ChatEditor • (EnglishUser)
@@ -201,6 +213,7 @@ ${windowNederlands}                              ChatEditor • (NederlandsUser)
 ${windowFrançais}                                ChatEditor • (FrançaisUser)
 ${windowDeutsch}                                 ChatEditor • (DeutschUser)
 ${windowEspañol}                                 ChatEditor • (EspañolUser)
+${windowArabic}                                  ChatEditor • (ArabicUser)
 
 *** Keywords ***
 # ----------------------------------SETUP & TEARDOWN-----------------------------------------------------
