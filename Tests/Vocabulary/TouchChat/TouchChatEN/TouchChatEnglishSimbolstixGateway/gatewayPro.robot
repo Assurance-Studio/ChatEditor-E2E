@@ -20,6 +20,7 @@ Validate "Gateway Pro" vocabulary
 Assertions
     # Check to see if there is a picture of the vocabulary icons - Gateway Pro
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Questions
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gatewayPro\\questions.png    0.6
 

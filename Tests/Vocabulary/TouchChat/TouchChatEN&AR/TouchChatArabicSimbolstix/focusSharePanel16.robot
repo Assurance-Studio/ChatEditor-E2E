@@ -21,6 +21,7 @@ Validate "Focus Share Panel 16" vocabulary
 Assertions
     # Click on a button's text - Focus Share Panel 16
     Set Resolution    ${windowArabic}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    أيام الأسبوع
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish&Arabic\\focusSharePanel16\\daysOfTheWeek.png    0.6
 

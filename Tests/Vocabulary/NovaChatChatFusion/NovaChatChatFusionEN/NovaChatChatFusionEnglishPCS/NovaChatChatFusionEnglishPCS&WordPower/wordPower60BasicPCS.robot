@@ -20,6 +20,7 @@ Validate "WordPower60 Basic PCS" vocabulary
 Assertions for "WordPower60 Basic PCS" ENGLISH vocabulary
     # Click on a button's text - WordPower60 Basic PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    PEOPLE
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\wordPower60BasicPCS\\people.png    0.6
 

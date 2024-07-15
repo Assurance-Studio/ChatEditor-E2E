@@ -21,6 +21,7 @@ Validate "ABC 6" vocabulary
 Assertions for "4 de base français SS" DEUTSCH vocabulary
     # Click on a button's text - ABC 6
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    ABCDEF
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\ABC6\\ABCDEF.png    0.6
 

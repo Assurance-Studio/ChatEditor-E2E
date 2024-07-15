@@ -21,6 +21,7 @@ Validate "Adult Panel 20" vocabulary
 Assertions
     # Click on a button's text - Adult Panel 20
     Set Resolution    ${windowArabic}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    أنا أشعر
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish&Arabic\\adultBoard20\\iFeel.png    0.6
 

@@ -18,6 +18,7 @@ Validate "LAMP 84 Full" vocabulary
 Assertions
     # Click on a button's text - LAMP 84 Full
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    finished
     Click On Button With Text    ${text}    WordsForLife\\lamp84Full\\finished.png    0.6
 

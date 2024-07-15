@@ -21,6 +21,7 @@ Validate "RehaFoXX 1.02" vocabulary
 Assertions for "RehaFoXX 1.02" DEUTSCH vocabulary
     # Click on a button's text - RehaFoXX 1.02
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    ich
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\rehaFoXX1.02\\ich.png    0.6
 

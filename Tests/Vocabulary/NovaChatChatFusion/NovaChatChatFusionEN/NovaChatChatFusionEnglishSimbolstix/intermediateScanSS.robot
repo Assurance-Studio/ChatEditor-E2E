@@ -20,6 +20,7 @@ Validate "Intermediate Scan SS" vocabulary
 Assertions for "Intermediate Scan SS" ENGLISH vocabulary
     # Click on a button's text - Intermediate Scan SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    talk
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\intermediateScanSS\\talk.png    0.6
 

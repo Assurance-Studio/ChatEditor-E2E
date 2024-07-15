@@ -21,6 +21,7 @@ Validate "Épeler français PCS" vocabulary
 Assertions for "Épeler français PCS" FRANCAISE vocabulary
     # Click on a button's text - Épeler français SS
     Set Resolution    ${windowFrançais}    1800    800
+    Get Element    name:Aide    timeout=5
     ${text}    Set Variable    PHRASES
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\epelerFrancaisPCS\\phrases.png    0.6
 

@@ -21,6 +21,7 @@ Validate "teclado SS" vocabulary
 Assertions for "teclado SS" ESPAÑOL vocabulary
     # Click on a button's text - teclado SS
     Set Resolution    ${windowEspañol}    1800    800
+    Get Element    name:Ayuda    timeout=5
     ${text}    Set Variable    FRASES
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Espanol\\tecladoSS\\frases.png    0.6
 

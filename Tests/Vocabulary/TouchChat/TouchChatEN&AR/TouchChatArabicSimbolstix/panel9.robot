@@ -21,6 +21,7 @@ Validate "Panel 9" vocabulary
 Assertions
     # Click on a button's text - Panel 9
     Set Resolution    ${windowArabic}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    منمن
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish&Arabic\\panel9\\fromMe.png    0.6
 

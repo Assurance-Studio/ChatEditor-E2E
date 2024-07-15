@@ -20,6 +20,7 @@ Validate "WordPower60 SS" vocabulary
 Assertions
     # Click on a button's text - WordPower60 SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    PEOPLE
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\wordPower60SS\\people.png    0.6
 

@@ -20,6 +20,7 @@ Validate "WordPower108 w Keyboard PCS" vocabulary
 Assertions for "WordPower108 w Keyboard PCS" ENGLISH vocabulary
     # Click on a button's text - WordPower108 w Keyboard PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    QUESTN
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\wordPower108wKeyboardPCS\\questn.png    0.6
 

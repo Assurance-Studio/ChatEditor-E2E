@@ -20,6 +20,7 @@ Validate "Talk-About" vocabulary
 Assertions
     # Click on a button's text - Talk-About
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    GO BACK
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\talkAbout\\goBack.png    0.6
 

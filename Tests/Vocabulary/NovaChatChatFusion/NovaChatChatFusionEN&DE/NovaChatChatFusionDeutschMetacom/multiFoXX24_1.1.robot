@@ -21,6 +21,7 @@ Validate "MultiFoXX 24 1.1" vocabulary
 Assertions for "MultiFoXX 24 1.1" DEUTSCH vocabulary
     # Click on a button's text - MultiFoXX 24 1.1
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    ÜBER MICH
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\multiFoXX24_1.1\\uberMich.png    0.6
 

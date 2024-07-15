@@ -20,6 +20,7 @@ Validate "Engage for iOS SS" vocabulary
 Assertions
     # Click on a button's text - Engage for iOS SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    PRACTICE
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\engageForIOSSS\\practice.png    0.6
 

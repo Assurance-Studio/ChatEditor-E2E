@@ -20,6 +20,7 @@ Validate "myQuickChat 4 Child SS" vocabulary
 Assertions
     # Click on a button's text - myQuickChat 4 Child SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Quickchat 1
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\myQuickChat4ChildSS\\quickchat.png    0.6
 

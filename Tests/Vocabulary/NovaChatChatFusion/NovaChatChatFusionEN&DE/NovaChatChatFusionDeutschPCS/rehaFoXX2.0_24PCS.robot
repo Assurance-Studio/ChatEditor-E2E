@@ -21,6 +21,7 @@ Validate "RehaFoXX 2.0 24 PCS" vocabulary
 Assertions for "RehaFoXX 2.0 24 PCS" DEUTSCH vocabulary
     # Click on a button's text - RehaFoXX 2.0 24 PCS
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    Über mich
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\rehaFoXX2.0_24PCS\\uberMich.png    0.6
 

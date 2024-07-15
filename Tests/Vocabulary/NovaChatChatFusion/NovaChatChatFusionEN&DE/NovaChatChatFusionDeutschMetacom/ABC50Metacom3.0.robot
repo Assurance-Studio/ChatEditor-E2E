@@ -23,7 +23,7 @@ Validate "ABC 50 Metacom 3.0" vocabulary
 Assertions for "ABC 50 Metacom 3.0" DEUTSCH vocabulary
     # Click on a button's text - ABC 50 Metacom    3.0
     Set Resolution    ${windowDeutsch}    1800    800
-    # Pause Execution
+    Get Element    name:Hilfe    timeout=5
     ${text}=    Set Variable    GROSS
     Click On Button With Text
     ...    ${text}

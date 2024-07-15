@@ -18,6 +18,7 @@ Validate "LAMP 84 One Hit" vocabulary
 Assertions
     # Click on a button's text - LAMP 84 One Hit
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    little
     Click On Button With Text    ${text}    WordsForLife\\lamp84OneHit\\little.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

@@ -5,6 +5,7 @@ Resource            ../../../../../Resources/vocabularyAssertions.robot
 
 Suite Setup         Run Keywords    Delete Chat Editor Folder    AND    Open ChatEditor
 Suite Teardown      Close ChatEditor
+Library    Dialogs
 
 *** Test Cases ***
 Validate "Essence 60" vocabulary
@@ -19,6 +20,7 @@ Validate "Essence 60" vocabulary
 Assertions
     # Click on a button's text - Essence 60
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    I need some help
     Click On Button With Text    ${text}    Dialogue\\DialogueEnglish\\essence60\\iNeedSomeHelp.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

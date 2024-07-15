@@ -20,6 +20,7 @@ Validate "4-Basic PCS" vocabulary
 Assertions
     # Click on a button's text - 4-Basic PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    I want
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\4BasicPCS\\iWant.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

@@ -19,6 +19,7 @@ Validate "Essence 84" vocabulary
 Assertions
     # Click on a button's text - Essence 84
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    I need some help
     Click On Button With Text    ${text}    Dialogue\\DialogueEnglish\\essence84\\iNeedSomeHelp.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

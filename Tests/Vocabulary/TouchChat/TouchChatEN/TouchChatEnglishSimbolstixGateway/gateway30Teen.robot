@@ -20,6 +20,7 @@ Validate "Gateway 30 Teen" vocabulary
 Assertions
     # Check to see if there is a picture of the vocabulary icons - Gateway 30 Teen
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    more
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gateway30Teen\\more.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

@@ -21,6 +21,7 @@ Validate "EKS 45 2.1" vocabulary
 Assertions for "EKS 45 2.1" DEUTSCH vocabulary
     # Click on a button's text - EKS 45 2.1
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    Geräusche wahrnehmen
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\EKS_45_2.1\\gerauscheWahrnehmen.png    0.6
 

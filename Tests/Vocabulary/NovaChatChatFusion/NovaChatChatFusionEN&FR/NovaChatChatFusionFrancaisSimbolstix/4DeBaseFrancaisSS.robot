@@ -21,6 +21,7 @@ Validate "4 de base français SS" vocabulary
 Assertions for "4 de base français SS" FRANCAISE vocabulary
     # Click on a button's text - 4 de base français SS
     Set Resolution    ${windowFrançais}    1800    800
+    Get Element    name:Aide    timeout=5
     ${text}    Set Variable    Je veux
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\4DeBaseFrancaisSS\\jeVeux.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

@@ -21,6 +21,7 @@ Validate "Referendum Board 16" vocabulary
 Assertions
     # Click on a button's text - Referendum Board 16
     Set Resolution    ${windowArabic}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    OW
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish&Arabic\\referendumBoard16\\ow.png    0.6
 

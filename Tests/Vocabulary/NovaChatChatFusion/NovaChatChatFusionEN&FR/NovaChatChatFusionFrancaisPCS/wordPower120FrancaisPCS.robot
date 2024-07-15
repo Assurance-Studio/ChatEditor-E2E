@@ -21,6 +21,7 @@ Validate "WordPower120 français PCS" vocabulary
 Assertions for "WordPower120 français PCS" FRANCAISE vocabulary
     # Click on a button's text - WordPower120 français PCS
     Set Resolution    ${windowFrançais}    1800    800
+    Get Element    name:Aide    timeout=5
     ${text}    Set Variable    QUESTNS
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\wordPower120FrancaisPCS\\questns.png    0.6
 

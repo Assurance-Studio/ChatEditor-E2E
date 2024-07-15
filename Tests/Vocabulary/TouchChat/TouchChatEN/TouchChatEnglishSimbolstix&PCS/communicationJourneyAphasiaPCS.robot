@@ -20,6 +20,7 @@ Validate "Communication Journey Aphasia PCS" vocabulary
 Assertions
     # Click on a button's text - Communication Journey Aphasia PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Things
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\CommunicationJourneyAphasiaPCS\\things.png    0.6
 

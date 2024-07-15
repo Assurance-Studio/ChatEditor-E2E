@@ -21,6 +21,7 @@ Validate "LoGoFoXX 32 2.0" vocabulary
 Assertions for "LoGoFoXX 32 2.0" DEUTSCH vocabulary
     # Click on a button's text - LoGoFoXX 32 2.0`
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    Sätze / Fragen
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\loGoFoXX32_2.0\\fragen.png    0.6
 

@@ -20,6 +20,7 @@ Validate "Explore Access PCS" vocabulary
 Assertions for "Explore Access PCS" ENGLISH vocabulary
     # Click on a button's text - Explore Access PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Access Practice
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\exploreAccessPCS\\accessPractice.png    0.6
 

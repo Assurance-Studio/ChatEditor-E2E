@@ -21,6 +21,7 @@ Validate "MultiChat 15 français SS" vocabulary
 Assertions for "MultiChat 15 français SS" FRANCAISE vocabulary
     # Click on a button's text - MultiChat 15 français SS
     Set Resolution    ${windowFrançais}    1800    800
+    Get Element    name:Aide    timeout=5
     ${text}    Set Variable    Questions
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\multiChat15FrancaisSS\\questions.png    0.6
 

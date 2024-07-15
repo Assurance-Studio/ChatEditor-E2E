@@ -21,6 +21,7 @@ Validate "Communication Journey Afasia Español PCS" vocabulary
 Assertions for "Communication Journey Afasia Español PCS" ESPAÑOL vocabulary
     # Click on a button's text - Communication Journey Afasia Español PCS
     Set Resolution    ${windowEspañol}    1800    800
+    Get Element    name:Ayuda    timeout=5
     ${text}    Set Variable    Cosas
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Espanol\\communicationJourneyAfasiaEspanolPCS\\cosas.png    0.6
 

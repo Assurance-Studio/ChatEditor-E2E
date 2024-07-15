@@ -21,6 +21,7 @@ Validate "MultiFoXX 45" vocabulary
 Assertions for "MultiFoXX 45" DEUTSCH vocabulary
     # Click on a button's text - MultiFoXX 45
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    ich
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\multiFoXX45\\ich.png    0.6
 

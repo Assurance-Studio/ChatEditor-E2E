@@ -21,6 +21,7 @@ Validate "VocabPC français SS" vocabulary
 Assertions for "VocabPC français SS" FRANCAISE vocabulary
     # Click on a button's text - VocabPC français SS
     Set Resolution    ${windowFrançais}    1800    800
+    Get Element    name:Aide    timeout=5
     ${text}    Set Variable    Je veux
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\vocabPCFrancaisSS\\jeVeux.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

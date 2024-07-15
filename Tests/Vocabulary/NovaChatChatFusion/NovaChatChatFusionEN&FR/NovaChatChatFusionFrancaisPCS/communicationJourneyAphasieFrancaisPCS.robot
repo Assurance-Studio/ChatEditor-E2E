@@ -23,7 +23,7 @@ Validate "Communication Journey Aphasie français PCS" vocabulary
 Assertions for "Communication Journey Aphasie français PCS" ENGLISH vocabulary
     # Click on a button's text - Communication Journey Aphasie français PCS
     Set Resolution    ${windowFrançais}    1800    800
-    # Pause Execution
+    Get Element    name:Aide    timeout=5
     ${text}=    Set Variable    Objets
     Click On Button With Text
     ...    ${text}

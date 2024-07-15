@@ -20,6 +20,7 @@ Validate "WordPower25 Touch & Scan SS" vocabulary
 Assertions
     # Click on a button's text - WordPower25 Touch & Scan SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    I
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\wordPower25Touch&ScanSS\\i.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

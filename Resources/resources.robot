@@ -15,6 +15,7 @@ ${ok_btn_id1}                                    id:1
 ${ok_btn_id2}                                    id:2
 ${myResources}                                   name:"My Resources"
 ${edit_mode_btn}                                 name:"Edit Mode"
+${edit_mode_btn_english&hebrew}                  name:"מצב עריכה"
 ${edit_mode_btn_english&nederlands}              name:Bewerkmodus
 ${edit_mode_btn_english&français}                name:"Mode de modification"
 ${edit_mode_btn_english&deutsch}                 name:Editiermodus
@@ -206,6 +207,16 @@ ${panel9}                                        name:"لوحة ٩ 9"
 ${panel12}                                       name:"لوحة ١٢ 12"
 ${panel15}                                       name:"لوحة ١٥ 15"
 
+# English&Hebrew vocabularies
+${board9ForChildrenOrTeenagers}                  name:"לוח 9 לילדים או מתבגרים"
+${board12}                                       name:"לוח 12"
+${integratedBoard15ForSchoolChildren}            name:"לוח 15 משולב לילדי בית ספר"
+${basic4Board}                                   name:"לוח ארבע בסיסי"
+${wardBoardWithoutSymbols}                       name:"לוח אשפוז ללא סמלים"
+${hospitalizationBoardWithSymbols}               name:"לוח אשפוז עם סמלים"
+${adultsBoard}                                   name:"לוח מבוגרים"
+${boardWithAdditions}                            name:"לוח ׳מקלדת׳ עם תוספות"
+
 # ----------------------------------CONFIGURATION LANGUAGES-----------------------------------------------------
 ${configuration}                                 name:"Create New Configuration"
 ${window}                                        ChatEditor • (EnglishUser)
@@ -214,6 +225,7 @@ ${windowFrançais}                                ChatEditor • (FrançaisUser)
 ${windowDeutsch}                                 ChatEditor • (DeutschUser)
 ${windowEspañol}                                 ChatEditor • (EspañolUser)
 ${windowArabic}                                  ChatEditor • (ArabicUser)
+${windowHebrew}                                  ChatEditor • (HebrewUser)
 
 *** Keywords ***
 # ----------------------------------SETUP & TEARDOWN-----------------------------------------------------
@@ -336,6 +348,11 @@ Reach Library of vocabs
     [Arguments]    ${char}
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    ${char}
+
+Reach Library of Hebrew vocabs
+    RPA.Desktop.Press Keys    alt
+    RPA.Desktop.Press Keys    left
+    RPA.Desktop.Press Keys    enter
 
 Create new vocabulary
     RPA.Desktop.Press Keys    alt

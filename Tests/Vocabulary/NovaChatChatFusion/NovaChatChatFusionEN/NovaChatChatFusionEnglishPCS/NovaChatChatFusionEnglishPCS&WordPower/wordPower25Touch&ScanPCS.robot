@@ -20,6 +20,7 @@ Validate "WordPower25 Touch & Scan PCS" vocabulary
 Assertions for "WordPower25 Touch & Scan PCS" ENGLISH vocabulary
     # Click on a button's text - WordPower25 Touch & Scan PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    clear
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\wordPower25Touch&ScanPCS\\clear.png    0.6
 

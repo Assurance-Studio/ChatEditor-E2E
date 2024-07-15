@@ -17,7 +17,7 @@ Validate "Pixon" vocabulary
     # Sleep    3
     # Change Resolution    ${window}    800    600
     Reach Library of vocabs    l
-    Select "Pixon" vocabulary
+    # Select "Pixon" vocabulary
 
 # Assertions
 # # Check to see if there is a picture of the vocabulary icons - Pixon

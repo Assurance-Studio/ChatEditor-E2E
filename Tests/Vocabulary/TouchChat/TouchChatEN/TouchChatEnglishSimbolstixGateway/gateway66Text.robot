@@ -20,6 +20,7 @@ Validate "Gateway 66 Text" vocabulary
 Assertions
     # Check to see if there is a picture of the vocabulary icons - Gateway 66 Text
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    I
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gateway66Text\\i.png    0.7
     ${message}=    RPA.Windows.Get Value    id:1000

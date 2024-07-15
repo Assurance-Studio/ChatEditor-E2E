@@ -20,6 +20,7 @@ Validate "Gateway 40 Text" vocabulary
 Assertions
     # Check to see if there is a picture of the vocabulary icons - Gateway 40 Text
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Questions
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gateway40Text\\questions.png    0.6
 
