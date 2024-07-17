@@ -172,7 +172,6 @@ ${multiFoXX24_1.1}                               name:"MultiFoXX 24 1.1"
 ${multiFoXX45}                                   name:"MultiFoXX 45"
 ${rehaFoXX1.02}                                  name:"RehaFoXX 1.02"
 
-
 # English&Español vocabularies
 ${communicationJourneyAfasiaEspanolSS}           name:"Communication Journey Afasia Español SS"
 ${multiChat15BilingualSS}                        name:"MultiChat 15 Bilingual SS"
@@ -196,6 +195,8 @@ ${wordPower25EspanolPCS}                         name:"WordPower25 Español PCS"
 ${wordPower48EspanolBasicoPCS}                   name:"WordPower48 Español Básico PCS"
 ${wordPower48EspanolPCS}                         name:"WordPower48 Español PCS"
 ${wordPower60EspanolBasicoPCS}                   name:"WordPower60 Español Básico PCS"
+${essence60Espanol}                              name:"Essence 60 Español"
+${essence84Espanol}                              name:"Essence 84 Español"
 
 # English&Arabic vocabularies
 ${referendumBoard16}                             name:"	لوحة استثفاء 16"
