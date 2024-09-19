@@ -5,6 +5,7 @@ Library     RPA.Desktop
 Library     String
 Library     screen_resolution.py
 Library     pyautogui
+Library     WhiteLibrary
 
 *** Variables ***
 # ----------------------------------PATH-----------------------------------------------------
@@ -13,8 +14,10 @@ ${chatEditorPath}                                "C:/Program Files (x86)/Chat Ed
 # ----------------------------------BUTTONS-----------------------------------------------------
 ${ok_btn_id1}                                    id:1
 ${ok_btn_id2}                                    id:2
+${cancel_btn}                                    id:2
 ${myResources}                                   name:"My Resources"
 ${edit_mode_btn}                                 name:"Edit Mode"
+${edit_vocab_btn}                                name:"Edit Vocab"
 ${edit_mode_btn_english&hebrew}                  name:"מצב עריכה"
 ${edit_mode_btn_english&nederlands}              name:Bewerkmodus
 ${edit_mode_btn_english&français}                name:"Mode de modification"
@@ -24,6 +27,8 @@ ${page_down_button}                              id:DownPageButton
 ${productDropbox}                                id:1585
 ${languageDropbox}                               id:1587
 ${symbolSetDropbox}                              id:1586
+${speechDisplayBar}                              id:1000
+${voiceDropbox}                                  id:1016
 
 # Products
 ${NovaChat/ChatFusion}                           name:"Nova Chat/Chat Fusion"
@@ -39,6 +44,7 @@ ${english&Deutsch}                               name:"English & Deutsch"
 ${english&Español}                               name:"English & Español"
 ${english&Arabic}                                name:"English & Arabic"
 ${english&Hebrew}                                name:"English & Hebrew"
+${deutsch}                                       name:"Deutsch"
 
 # Symbol Sets
 ${symbolStix}                                    name:SymbolStix
@@ -125,6 +131,7 @@ ${lamp84OneHit}                                  name:"LAMP 84 One Hit"
 ${lamp84Transition}                              name:"LAMP 84 Transition"
 ${essence60}                                     name:"Essence 60"
 ${essence84}                                     name:"Essence 84"
+${pixon}                                         name:"Pixon"
 
 # English&Nederlands vocabularies
 ${myQuickChat4KinddSS}                           name:"myQuickChat 4 Kind SS"
@@ -375,6 +382,18 @@ Maximize the window
     RPA.Desktop.Press Keys    alt    space
     RPA.Desktop.Press Keys    x
 
+Select Text By Shifting Left
+    [Arguments]    ${repeats}
+    FOR    ${index}    IN RANGE    ${repeats}
+        RPA.Desktop.Press Keys    shift    left
+        BuiltIn.Sleep    0.1
+    END
+
+Delete saved pages
+    ${username}=    Get Environment Variable    USERNAME
+    ${folderPath}=    Set Variable    C:\\Users\\${username}\\OneDrive\\Pictures
+    OperatingSystem.Remove Files    ${folderPath}\\Spelling SS - .Template.png    ${folderPath}\\Spelling SS - SPKBD phrases 2.png    ${folderPath}\\Spelling SS - SPKBD phrases.png    ${folderPath}\\Spelling SS - SPKBD-Num.png    ${folderPath}\\Spelling SS - SPKBD-QWERTY.png    ${folderPath}\\Spelling SS - Texting Contacts.png    ${folderPath}\\Spelling SS - Texting Conversations.png    ${folderPath}\\Spelling SS - Texting Message Details.png    ${folderPath}\\Spelling SS - Texting Messages.png
+
 # ----------------------------------SELECT VOCABULARIES-----------------------------------------------------
 Select Vocabulary
     [Arguments]    ${language}=NONE    ${symbolSet}=NONE    ${additionalVocabularies}=NONE    ${vocabName}=NONE    ${downPageButton}=id:DownPageButton
@@ -393,3 +412,15 @@ Click Vocabulary Based On Visibility
     ...    Log    "The element ${vocabName} was clicked successfully."
     ...    ELSE
     ...    Run Keywords    RPA.Windows.Click    ${downPageButton}    AND    RPA.Windows.Click    ${vocabName}
+
+Select Pixon vocabulary
+    RPA.Windows.Click    ${english}
+    RPA.Windows.Click    ${pixon}
+    ${list}    RPA.Windows.Get Elements    name:Pixon    siblings_only=off
+    Get Length    ${list}
+    ${element}    Get Element    ${list[1]}
+    RPA.Windows.Click    ${element}
+    RPA.Desktop.Press Keys    down
+    RPA.Desktop.Press Keys    enter
+
+    # RPA.Windows.Click    name:Open

@@ -5,6 +5,7 @@ Resource            ../../../../../Resources/vocabularyAssertions.robot
 
 Suite Setup         Run Keywords    Delete Chat Editor Folder    AND    Open ChatEditor
 Suite Teardown      Close ChatEditor
+Library    Dialogs
 
 *** Test Cases ***
 Validate "Pixon" vocabulary
@@ -13,12 +14,9 @@ Validate "Pixon" vocabulary
     Select language            ${english}
     Select Symbol Set: SymbolStix&Pixon
     Create user                EnglishUser
-    Maximize the window
-    # Sleep    3
-    # Change Resolution    ${window}    800    600
+    Control Window    name:"ChatEditor • (EnglishUser)"
     Reach Library of vocabs    l
-    # Select "Pixon" vocabulary
-
+    Select Pixon vocabulary
 # Assertions
 # # Check to see if there is a picture of the vocabulary icons - Pixon
 # #     Add Image Path    ${image_path_vocabularies}
