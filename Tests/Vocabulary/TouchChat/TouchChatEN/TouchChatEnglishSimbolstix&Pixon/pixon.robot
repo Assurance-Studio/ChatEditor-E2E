@@ -14,24 +14,29 @@ Validate "Pixon" vocabulary
     Select language            ${english}
     Select Symbol Set: SymbolStix&Pixon
     Create user                EnglishUser
-    Control Window    name:"ChatEditor • (EnglishUser)"
+    Maximize the window
     Reach Library of vocabs    l
     Select Pixon vocabulary
-# Assertions
-# # Check to see if there is a picture of the vocabulary icons - Pixon
-# #     Add Image Path    ${image_path_vocabularies}
-# #     SikuliLibrary.Screen Should Contain    pixonVocabularyGrid.png
+    Maximize the window
 
-#     # Check to see if the dictionary's name is included in the text box - Pixon
-#     RPA.Windows.Click    ${edit_mode_btn}
-#     ${message}=    RPA.Windows.Get Text    id:65535
+Assertions
+    # Click on a button's text - Pixon
+    Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
+    ${text}    Set Variable    polite
+    Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\pixon\\color.png    0.6
 
-#     Should Contain    ${message}    The vocabulary "Pixon"
-#     RPA.Windows.Click    id:7
+    Check to see if the user exist
 
-#     # Check to see if the dictionary's 'name' attribute is its actual name - Pixon
-#     RPA.Desktop.Press Keys    alt    l
-#     RPA.Windows.Click    name:English
-#     RPA.Windows.Click    name:Pixon
-#     ${name}=    RPA.Windows.Get Attribute    name:"Pixon (Current)"    Name
-#     Should Be Equal    ${name}    Pixon (Current)
+    # Check to see if the dictionary's name is included in the text box - Pixon
+    RPA.Windows.Click    ${edit_mode_btn}
+    ${message}=    RPA.Windows.Get Text    id:65535
+    Should Contain    ${message}    The vocabulary "Pixon"
+    RPA.Windows.Click    id:7
+
+    # Check to see if the dictionary's 'name' attribute is its actual name - Pixon
+    RPA.Desktop.Press Keys    alt    l
+    RPA.Windows.Click    name:English
+    RPA.Windows.Click    name:Pixon
+    ${name}=    RPA.Windows.Get Attribute    name:"Pixon (Current)"    Name
+    Should Be Equal    ${name}    Pixon (Current)

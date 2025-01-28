@@ -10,6 +10,7 @@ Library     WhiteLibrary
 *** Variables ***
 # ----------------------------------PATH-----------------------------------------------------
 ${chatEditorPath}                                "C:/Program Files (x86)/Chat Editor/Chat Editor.exe"
+${transferVocabsToFilePath}                          %USERPROFILE%/Downloads
 
 # ----------------------------------BUTTONS-----------------------------------------------------
 ${ok_btn_id1}                                    id:1
@@ -422,5 +423,3 @@ Select Pixon vocabulary
     RPA.Windows.Click    ${element}
     RPA.Desktop.Press Keys    down
     RPA.Desktop.Press Keys    enter
-
-    # RPA.Windows.Click    name:Open
