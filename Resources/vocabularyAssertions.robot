@@ -33,3 +33,7 @@ Check to see if the user exist - EspañolUser
 Check to see if the user exist - ArabicUser
     ${text}=    RPA.Windows.Get Text    name:"ChatEditor • (ArabicUser)"
     Should Be Equal    ${text}    ChatEditor • (ArabicUser)
+
+Check to see if the user exist - HebrewUser
+    ${text}=    RPA.Windows.Get Text    name:"ChatEditor • (HebrewUser)"
+    Should Be Equal    ${text}    ChatEditor • (HebrewUser)

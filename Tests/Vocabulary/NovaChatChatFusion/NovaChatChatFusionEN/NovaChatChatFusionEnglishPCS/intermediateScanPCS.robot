@@ -20,6 +20,7 @@ Validate "Intermediate Scan PCS" vocabulary
 Assertions for "Intermediate Scan PCS" ENGLISH vocabulary
     # Click on a button's text - Intermediate Scan PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    need
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\intermediateScanPCS\\need.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

@@ -20,8 +20,9 @@ Validate "WordPower140 Scan & Touch PCS" vocabulary
 Assertions for "WordPower140 Scan & Touch PCS" ENGLISH vocabulary
     # Click on a button's text - WordPower140 Scan & Touch PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    I
-    Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\wordPower140Scan&TouchPCS\\i.png    0.9
+    Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\wordPower140Scan&TouchPCS\\i.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000
     Should Contain    ${message}    I
 

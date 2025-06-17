@@ -20,6 +20,7 @@ Validate "Gateway 20 Teen" vocabulary
 Assertions
     # Click on a button's text - Gateway 20 Teen
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    I
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gateway20Teen\\i.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

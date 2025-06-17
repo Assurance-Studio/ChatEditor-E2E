@@ -20,6 +20,7 @@ Validate "MultiChat 15 Student PCS" vocabulary
 Assertions
     # Click on a button's text - MultiChat 15 Student PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Questions
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\multiChat15StudentPCS\\questions.png    0.6
 

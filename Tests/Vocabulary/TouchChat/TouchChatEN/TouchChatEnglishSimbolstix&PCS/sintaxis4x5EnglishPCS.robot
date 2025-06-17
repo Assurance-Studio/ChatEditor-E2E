@@ -20,6 +20,7 @@ Validate "sintaxis 4x5 English PCS" vocabulary
 Assertions
     # Click on a button's text - sintaxis 4x5 English PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Places
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\sintaxis4x5EnglishPCS\\places.png    0.6
 

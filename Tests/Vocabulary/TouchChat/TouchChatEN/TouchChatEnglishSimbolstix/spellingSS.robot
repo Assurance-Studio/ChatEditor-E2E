@@ -21,6 +21,7 @@ Validate "Spelling SS" vocabulary
 Assertions
     # Click on a button's text - Spelling SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    PHRASES
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\spellingSS\\phrases.png    0.6
 

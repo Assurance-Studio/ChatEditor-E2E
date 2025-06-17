@@ -21,6 +21,7 @@ Validate "Keyboard with Add-ons" vocabulary
 Assertions
     # Click on a button's text - Keyboard with Add-ons
     Set Resolution    ${windowArabic}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    سطر
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish&Arabic\\keyboardWithAddOns\\line.png    0.6
 

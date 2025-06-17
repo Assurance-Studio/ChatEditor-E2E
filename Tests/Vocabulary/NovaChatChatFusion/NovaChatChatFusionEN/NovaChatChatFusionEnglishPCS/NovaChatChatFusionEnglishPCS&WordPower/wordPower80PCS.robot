@@ -20,6 +20,7 @@ Validate "WordPower80 PCS" vocabulary
 Assertions for "WordPower80 PCS" ENGLISH vocabulary
     # Click on a button's text - WordPower80 PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    QUESTN
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\wordPower80PCS\\questn.png    0.6
 

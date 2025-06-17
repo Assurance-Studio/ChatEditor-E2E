@@ -21,6 +21,7 @@ Validate "WordPower25 Español PCS" vocabulary
 Assertions for "WordPower25 Español PCS" ESPAÑOL vocabulary
     # Click on a button's text - WordPower25 Español PCS
     Set Resolution    ${windowEspañol}    1800    800
+    Get Element    name:Ayuda    timeout=5
     ${text}    Set Variable    yo
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Espanol\\wordPower25EspanolPCS\\yo.png    0.6
 

@@ -23,6 +23,7 @@ Assertions
 
     # Check to see if the dictionary's name is included in the text box - sin sintaxis 4x4 English SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     RPA.Windows.Click    ${edit_mode_btn}
     ${message}=    RPA.Windows.Get Text    id:65535
     Should Contain    ${message}    The vocabulary "sin sintaxis 4x4 English SS"

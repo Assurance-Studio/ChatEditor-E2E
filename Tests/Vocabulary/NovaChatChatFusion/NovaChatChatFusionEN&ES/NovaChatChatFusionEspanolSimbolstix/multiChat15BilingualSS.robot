@@ -21,6 +21,7 @@ Validate "MultiChat 15 Bilingual SS" vocabulary
 Assertions for "MultiChat 15 Bilingual SS" ESPAÑOL vocabulary
     # Click on a button's text - MultiChat 15 Bilingual SS
     Set Resolution    ${windowEspañol}    1800    800
+    Get Element    name:Ayuda    timeout=5
     ${text}    Set Variable    Cosas
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Espanol\\multiChat15BilingualSS\\preguntasQuestions.png    0.6
 

@@ -21,6 +21,7 @@ Validate "VocabPC Adolescent-Adult SS" vocabulary
 Assertions
     # Click on a button's text - VocabPC Adolescent-Adult SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    don't want
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\vocabPCAdolescent-AdultSS\\don'tWant.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

@@ -21,6 +21,7 @@ Validate "Communication Journey Aphasie français SS" vocabulary
 Assertions for "Communication Journey Aphasie français SS" ENGLISH vocabulary
     # Click on a button's text - Communication Journey Aphasie français SS
     Set Resolution    ${windowFrançais}    1800    800
+    Get Element    name:Aide    timeout=5
     ${text}    Set Variable    Objets
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\communicationJourneyAphasieFrancaisSS\\objets.png    0.6
 

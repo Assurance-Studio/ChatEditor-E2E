@@ -21,6 +21,7 @@ Validate "myQuickChat 8 Kind SS" vocabulary
 Assertions for "myQuickChat 8 Kind SS" ENGLISH vocabulary
     # Click on a button's text - myQuickChat 8 Kind SS
     Set Resolution    ${windowNederlands}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Quickchat 1
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Nederlands\\myQuickChat8KindSS\\quickchat1.png    0.6
 

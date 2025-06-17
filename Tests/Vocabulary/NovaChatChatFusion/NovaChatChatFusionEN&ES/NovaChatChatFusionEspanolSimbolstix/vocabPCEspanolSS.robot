@@ -21,6 +21,7 @@ Validate "VocabPC Español SS" vocabulary
 Assertions for "VocabPC Español SS" ESPAÑOL vocabulary
     # Click on a button's text - VocabPC Español SS
     Set Resolution    ${windowEspañol}    1800    800
+    Get Element    name:Ayuda    timeout=5
     ${text}    Set Variable    yo quiero
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Espanol\\vocabPCEspaniolSS\\yoQuiero.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000

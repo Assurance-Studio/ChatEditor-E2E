@@ -20,6 +20,7 @@ Validate "WordPower20 Simply PCS" vocabulary
 Assertions for "WordPower20 Simply PCS" ENGLISH vocabulary
     # Click on a button's text - WordPower 20 Simply PCS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    clear
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\wordPower20SimplyPCS\\clear.png    0.6
 

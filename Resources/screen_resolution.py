@@ -4,6 +4,7 @@ import pygetwindow as gw
 import pyautogui
 import os
 import logging
+import time
 
 
 def change_resolution(window_title, width, height):
@@ -32,6 +33,8 @@ def set_resolution(window_title, width, height):
 
 # Define the keyword used to click on the button with the specified text
 def click_on_button_with_text(text, image, conf):
+    # This time is necessary for the image to load
+    time.sleep(2)
     # Get the current working directory
     current_dir = os.path.dirname(os.path.abspath(__file__))
 

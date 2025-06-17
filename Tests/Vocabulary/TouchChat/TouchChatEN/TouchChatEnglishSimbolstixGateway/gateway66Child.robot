@@ -20,6 +20,7 @@ Validate "Gateway 66 Child" vocabulary
 Assertions
     # Check to see if there is a picture of the vocabulary icons - Gateway 66 Child
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    you
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gateway66Child\\you.png    0.6
 

@@ -5,16 +5,21 @@ Library     RPA.Desktop
 Library     String
 Library     screen_resolution.py
 Library     pyautogui
+Library     WhiteLibrary
 
 *** Variables ***
 # ----------------------------------PATH-----------------------------------------------------
 ${chatEditorPath}                                "C:/Program Files (x86)/Chat Editor/Chat Editor.exe"
+${transferVocabsToFilePath}                          %USERPROFILE%/Downloads
 
 # ----------------------------------BUTTONS-----------------------------------------------------
 ${ok_btn_id1}                                    id:1
 ${ok_btn_id2}                                    id:2
+${cancel_btn}                                    id:2
 ${myResources}                                   name:"My Resources"
 ${edit_mode_btn}                                 name:"Edit Mode"
+${edit_vocab_btn}                                name:"Edit Vocab"
+${edit_mode_btn_english&hebrew}                  name:"מצב עריכה"
 ${edit_mode_btn_english&nederlands}              name:Bewerkmodus
 ${edit_mode_btn_english&français}                name:"Mode de modification"
 ${edit_mode_btn_english&deutsch}                 name:Editiermodus
@@ -23,6 +28,8 @@ ${page_down_button}                              id:DownPageButton
 ${productDropbox}                                id:1585
 ${languageDropbox}                               id:1587
 ${symbolSetDropbox}                              id:1586
+${speechDisplayBar}                              id:1000
+${voiceDropbox}                                  id:1016
 
 # Products
 ${NovaChat/ChatFusion}                           name:"Nova Chat/Chat Fusion"
@@ -38,6 +45,7 @@ ${english&Deutsch}                               name:"English & Deutsch"
 ${english&Español}                               name:"English & Español"
 ${english&Arabic}                                name:"English & Arabic"
 ${english&Hebrew}                                name:"English & Hebrew"
+${deutsch}                                       name:"Deutsch"
 
 # Symbol Sets
 ${symbolStix}                                    name:SymbolStix
@@ -48,7 +56,7 @@ ${symbolStix&Pixon}                              name:"SymbolStix & Pixon"
 
 # ----------------------------------VOCABULARIES-----------------------------------------------------
 #English vocabularies
-${4BasicSS}                                      name:"4-Basic SS (Current)"
+${4BasicSS}                                      name:"Simple 4-Basic SS (Current)"
 ${communicationJourneyAphasiaSS}                 name:"Communication Journey Aphasia SS"
 ${communicationJourneyAphasiaUKSS}               name:"Communication Journey Aphasia UK SS"
 ${engageForiOSSS}                                name:"Engage for iOS SS"
@@ -65,7 +73,7 @@ ${sinSintaxis4x4EnglishSS}                       name:"sin sintaxis 4x4 English 
 ${sintaxis4x5EnglishSS}                          name:"sintaxis 4x5 English SS"
 ${spellingSS}                                    name:"Spelling SS"
 ${vocabPCAdolescent-AdultSS}                     name:"VocabPC Adolescent-Adult SS"
-${4BasicPCS}                                     name:"4-Basic PCS"
+${4BasicPCS}                                     name:"Simple 4-Basic PCS"
 ${communicationJourneyAphasiaPCS}                name:"Communication Journey Aphasia PCS"
 ${communicationJourneyAphasiaUKPCS}              name:"Communication Journey Aphasia UK PCS"
 ${engageForiOSPCS}                               name:"Engage for iOS PCS"
@@ -82,12 +90,14 @@ ${sinSintaxis4x4EnglishPCS}                      name:"sin sintaxis 4x4 English 
 ${sintaxis4x5EnglishPCS}                         name:"sintaxis 4x5 English PCS"
 ${spellingPCS}                                   name:"Spelling PCS"
 ${vocabPCAdolescent-AdultPCS}                    name:"VocabPC Adolescent-Adult PCS"
-${wordPower20SimplySS}                           name:"WordPower20 Simply SS"
+${wordPower25SS}                                 name:"WordPower25 SS"
 ${wordPower25Touch&ScanSS}                       name:"WordPower25 Touch & Scan SS"
 ${wordPower42BasicSS}                            name:"WordPower42 Basic SS"
 ${wordPower42SS}                                 name:"WordPower42 SS"
 ${wordPower48SS}                                 name:"WordPower48 SS"
+${wordPower48BasicSS}                            name:"WordPower48 Basic SS"
 ${wordPower60SS}                                 name:"WordPower60 SS"
+${wordPower60BasicSS}                            name:"WordPower60 Basic SS"
 ${wordPower80SS}                                 name:"WordPower80 SS"
 ${wordPower108SS}                                name:"WordPower108 SS"
 ${wordPower108wKeyboardSS}                       name:"WordPower108 w Keyboard SS"
@@ -119,11 +129,12 @@ ${wordPower80PCS}                                name:"WordPower80 PCS"
 ${wordPower108PCS}                               name:"WordPower108 PCS"
 ${wordPower108wKeyboardPCS}                      name:"WordPower108 w Keyboard PCS"
 ${wordPower140Scan&TouchPCS}                     name:"WordPower140 Scan & Touch PCS"
-${lamp84Full}                                    name:"LAMP 84 Full"
-${lamp84OneHit}                                  name:"LAMP 84 One Hit"
-${lamp84Transition}                              name:"LAMP 84 Transition"
+${lampWFLEnglish1Hit}                            name:"LAMP WFL - English 1-Hit"
+${lampWFLEnglishFull}                            name:"LAMP WFL - English Full"
+${lampWFLEnglishTransition}                      name:"LAMP WFL - English Transition"
 ${essence60}                                     name:"Essence 60"
 ${essence84}                                     name:"Essence 84"
+${pixon}                                         name:"Pixon"
 
 # English&Nederlands vocabularies
 ${myQuickChat4KinddSS}                           name:"myQuickChat 4 Kind SS"
@@ -162,15 +173,14 @@ ${ABC50Metacom3.0}                               name:"ABC 50 Metacom 3.0"
 ${ABC60Metacom3.0}                               name:"ABC 60 Metacom 3.0"
 ${EKS_15_2.1}                                    name:"EKS 15 2.1"
 ${EKS_45_2.1}                                    name:"EKS 45 2.1"
-${loGoFoXX15_2.0}                                name:"LoGoFoXX 15 2.0"
-${loGoFoXX24_2.0}                                name:"LoGoFoXX 24 2.0"
-${loGoFoXX32_2.0}                                name:"LoGoFoXX 32 2.0"
-${loGoFoXX60_2.0}                                name:"LoGoFoXX 60 2.0"
-${loGoFoXX84_1.0}                                name:"LoGoFoXX 84 1.0"
-${multiFoXX24_1.1}                               name:"MultiFoXX 24 1.1"
+${loGoFoXX15}                                    name:"LoGoFoXX 15"
+${loGoFoXX24}                                    name:"LoGoFoXX 24"
+${loGoFoXX32}                                    name:"LoGoFoXX 32"
+${loGoFoXX60}                                    name:"LoGoFoXX 60"
+${loGoFoXX84}                                    name:"LoGoFoXX 84"
+${multiFoXX24}                                   name:"MultiFoXX 24"
 ${multiFoXX45}                                   name:"MultiFoXX 45"
 ${rehaFoXX1.02}                                  name:"RehaFoXX 1.02"
-
 
 # English&Español vocabularies
 ${communicationJourneyAfasiaEspanolSS}           name:"Communication Journey Afasia Español SS"
@@ -195,6 +205,8 @@ ${wordPower25EspanolPCS}                         name:"WordPower25 Español PCS"
 ${wordPower48EspanolBasicoPCS}                   name:"WordPower48 Español Básico PCS"
 ${wordPower48EspanolPCS}                         name:"WordPower48 Español PCS"
 ${wordPower60EspanolBasicoPCS}                   name:"WordPower60 Español Básico PCS"
+${essence60Espanol}                              name:"Essence 60 Español"
+${essence84Espanol}                              name:"Essence 84 Español"
 
 # English&Arabic vocabularies
 ${referendumBoard16}                             name:"	لوحة استثفاء 16"
@@ -206,6 +218,16 @@ ${panel9}                                        name:"لوحة ٩ 9"
 ${panel12}                                       name:"لوحة ١٢ 12"
 ${panel15}                                       name:"لوحة ١٥ 15"
 
+# English&Hebrew vocabularies
+${board9ForChildrenOrTeenagers}                  name:"לוח 9 לילדים או מתבגרים"
+${board12}                                       name:"לוח 12"
+${integratedBoard15ForSchoolChildren}            name:"לוח 15 משולב לילדי בית ספר"
+${basic4Board}                                   name:"לוח ארבע בסיסי"
+${wardBoardWithoutSymbols}                       name:"לוח אשפוז ללא סמלים"
+${hospitalizationBoardWithSymbols}               name:"לוח אשפוז עם סמלים"
+${adultsBoard}                                   name:"לוח מבוגרים"
+${boardWithAdditions}                            name:"לוח ׳מקלדת׳ עם תוספות"
+
 # ----------------------------------CONFIGURATION LANGUAGES-----------------------------------------------------
 ${configuration}                                 name:"Create New Configuration"
 ${window}                                        ChatEditor • (EnglishUser)
@@ -214,6 +236,7 @@ ${windowFrançais}                                ChatEditor • (FrançaisUser)
 ${windowDeutsch}                                 ChatEditor • (DeutschUser)
 ${windowEspañol}                                 ChatEditor • (EspañolUser)
 ${windowArabic}                                  ChatEditor • (ArabicUser)
+${windowHebrew}                                  ChatEditor • (HebrewUser)
 
 *** Keywords ***
 # ----------------------------------SETUP & TEARDOWN-----------------------------------------------------
@@ -337,6 +360,11 @@ Reach Library of vocabs
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    ${char}
 
+Reach Library of Hebrew vocabs
+    RPA.Desktop.Press Keys    alt
+    RPA.Desktop.Press Keys    left
+    RPA.Desktop.Press Keys    enter
+
 Create new vocabulary
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
@@ -354,8 +382,21 @@ Create a new vocabulary file
 
 # ----------------------------------OTHERS-----------------------------------------------------
 Maximize the window
-    RPA.Desktop.Press Keys    alt    space
+    RPA.Desktop.Press Keys    alt
+    RPA.Desktop.Press Keys    space
     RPA.Desktop.Press Keys    x
+
+Select Text By Shifting Left
+    [Arguments]    ${repeats}
+    FOR    ${index}    IN RANGE    ${repeats}
+        RPA.Desktop.Press Keys    shift    left
+        BuiltIn.Sleep    0.1
+    END
+
+Delete saved pages
+    ${username}=    Get Environment Variable    USERNAME
+    ${folderPath}=    Set Variable    C:\\Users\\${username}\\OneDrive\\Pictures
+    OperatingSystem.Remove Files    ${folderPath}\\Spelling SS - .Template.png    ${folderPath}\\Spelling SS - SPKBD phrases 2.png    ${folderPath}\\Spelling SS - SPKBD phrases.png    ${folderPath}\\Spelling SS - SPKBD-Num.png    ${folderPath}\\Spelling SS - SPKBD-QWERTY.png    ${folderPath}\\Spelling SS - Texting Contacts.png    ${folderPath}\\Spelling SS - Texting Conversations.png    ${folderPath}\\Spelling SS - Texting Message Details.png    ${folderPath}\\Spelling SS - Texting Messages.png
 
 # ----------------------------------SELECT VOCABULARIES-----------------------------------------------------
 Select Vocabulary
@@ -375,3 +416,13 @@ Click Vocabulary Based On Visibility
     ...    Log    "The element ${vocabName} was clicked successfully."
     ...    ELSE
     ...    Run Keywords    RPA.Windows.Click    ${downPageButton}    AND    RPA.Windows.Click    ${vocabName}
+
+Select Pixon vocabulary
+    RPA.Windows.Click    ${english}
+    RPA.Windows.Click    ${pixon}
+    ${list}    RPA.Windows.Get Elements    name:Pixon    siblings_only=off
+    Get Length    ${list}
+    ${element}    Get Element    ${list[1]}
+    RPA.Windows.Click    ${element}
+    RPA.Desktop.Press Keys    down
+    RPA.Desktop.Press Keys    enter

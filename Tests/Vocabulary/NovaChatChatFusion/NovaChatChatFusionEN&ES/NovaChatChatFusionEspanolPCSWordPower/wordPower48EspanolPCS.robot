@@ -21,6 +21,7 @@ Validate "WordPower48 Español PCS" vocabulary
 Assertions for "WordPower48 Español PCS" ESPAÑOL vocabulary
     # Click on a button's text - WordPower48 Español PCS
     Set Resolution    ${windowEspañol}    1800    800
+    Get Element    name:Ayuda    timeout=5
     ${text}    Set Variable    GENTE
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Espanol\\wordPower48EspanolPCS\\gente.png    0.6
 

@@ -20,6 +20,7 @@ Validate "Explore Access SS" vocabulary
 Assertions for "Explore Access SS" ENGLISH vocabulary
     # Click on a button's text - Explore Access SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     ${text}    Set Variable    Access Practice
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish\\exploreAccessSS\\accessPractice.png    0.6
 

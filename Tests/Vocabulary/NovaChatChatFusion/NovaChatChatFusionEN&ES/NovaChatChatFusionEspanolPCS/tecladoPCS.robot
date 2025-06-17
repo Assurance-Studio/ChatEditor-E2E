@@ -21,6 +21,7 @@ Validate "teclado PCS" vocabulary
 Assertions for "teclado PCS" ESPAÑOL vocabulary
     # Click on a button's text - teclado PCS
     Set Resolution    ${windowEspañol}    1800    800
+    Get Element    name:Ayuda    timeout=5
     ${text}    Set Variable    FRASES
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Espanol\\tecladoPCS\\frases.png    0.6
 

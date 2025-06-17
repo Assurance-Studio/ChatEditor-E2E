@@ -21,6 +21,7 @@ Validate "ABC 45 3.0" vocabulary
 Assertions for "ABC 45 3.0" DEUTSCH vocabulary
     # Click on a button's text - ABC 45 3.0
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    GROSS
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\ABC45_3.0\\gross.png    0.6
 

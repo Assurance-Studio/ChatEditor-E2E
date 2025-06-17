@@ -21,6 +21,7 @@ Validate "ABC 60 3.0" vocabulary
 Assertions for "ABC 60 3.0" DEUTSCH vocabulary
     # Click on a button's text - ABC 60 3.0
     Set Resolution    ${windowDeutsch}    1800    800
+    Get Element    name:Hilfe    timeout=5
     ${text}    Set Variable    THEMEN
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\ABC60_3.0\\themen.png    0.6
 

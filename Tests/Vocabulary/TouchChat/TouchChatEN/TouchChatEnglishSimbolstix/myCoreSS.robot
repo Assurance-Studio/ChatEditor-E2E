@@ -22,6 +22,7 @@ Assertions
 
     # Check to see if the dictionary's name is included in the text box - myCore SS
     Set Resolution    ${window}    1800    800
+    Get Element    name:Help    timeout=5
     RPA.Windows.Click    ${edit_mode_btn}
     ${message}=    RPA.Windows.Get Text    id:65535
     Should Contain    ${message}    The vocabulary "myCore SS"
