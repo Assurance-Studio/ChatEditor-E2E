@@ -17,7 +17,7 @@ Reach "4-Basic SS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:SymbolStix    ${4BasicSS}
+    Select vocabulary    name:English    name:SymbolStix    NONE    ${4BasicSS}
 
 Reach "Check Online For New Version" modal
     RPA.Desktop.Press Keys    alt

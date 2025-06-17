@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Check "WordPower140 Scan & Touch SS" ENGLISH vocabulary
+Documentation       Check "WordPower25 SS" ENGLISH vocabulary
 Resource            ../../../../../Resources/resources.robot
 Resource            ../../../../../Resources/vocabularyAssertions.robot
 
@@ -7,7 +7,7 @@ Suite Setup         Run Keywords    Delete Chat Editor Folder    AND    Open Cha
 Suite Teardown      Close ChatEditor
 
 *** Test Cases ***
-Validate "WordPower140 Scan & Touch SS" vocabulary
+Validate "WordPower25 SS" vocabulary
     Create new configuration of ChatEditor
     Select Touch Chat
     Select language            ${english}
@@ -15,22 +15,21 @@ Validate "WordPower140 Scan & Touch SS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:SymbolStix    name:WordPower    ${wordPower140Scan&TouchSS}
+    Select vocabulary    name:English    name:SymbolStix    name:WordPower    ${wordPower25SS}
 
 Assertions
-
     Check to see if the user exist
 
-    # Check to see if the dictionary's name is included in the text box - WordPower140 Scan & Touch SS
+    # Check to see if the dictionary's name is included in the text box - WordPower25 SS
     RPA.Windows.Click    ${edit_mode_btn}
     ${message}=    RPA.Windows.Get Text    id:65535
-    Should Contain    ${message}    The vocabulary "WordPower140 Scan & Touch SS"
+    Should Contain    ${message}    The vocabulary "WordPower25 SS"
     RPA.Windows.Click    id:7
 
-    # Check to see if the dictionary's 'name' attribute is its actual name - WordPower140 Scan & Touch SS
+    # Check to see if the dictionary's 'name' attribute is its actual name - WordPower25 SS
     RPA.Desktop.Press Keys    alt    l
     RPA.Windows.Click    name:English
     RPA.Windows.Click    name:SymbolStix
     RPA.Windows.Click    name:WordPower
-    ${name}=    RPA.Windows.Get Attribute    name:"WordPower140 Scan & Touch SS (Current)"    Name
-    Should Be Equal    ${name}    WordPower140 Scan & Touch SS (Current)
+    ${name}=    RPA.Windows.Get Attribute    name:"WordPower25 SS (Current)"    Name
+    Should Be Equal    ${name}    WordPower25 SS (Current)

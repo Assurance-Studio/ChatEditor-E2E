@@ -56,7 +56,7 @@ ${symbolStix&Pixon}                              name:"SymbolStix & Pixon"
 
 # ----------------------------------VOCABULARIES-----------------------------------------------------
 #English vocabularies
-${4BasicSS}                                      name:"4-Basic SS (Current)"
+${4BasicSS}                                      name:"Simple 4-Basic SS (Current)"
 ${communicationJourneyAphasiaSS}                 name:"Communication Journey Aphasia SS"
 ${communicationJourneyAphasiaUKSS}               name:"Communication Journey Aphasia UK SS"
 ${engageForiOSSS}                                name:"Engage for iOS SS"
@@ -73,7 +73,7 @@ ${sinSintaxis4x4EnglishSS}                       name:"sin sintaxis 4x4 English 
 ${sintaxis4x5EnglishSS}                          name:"sintaxis 4x5 English SS"
 ${spellingSS}                                    name:"Spelling SS"
 ${vocabPCAdolescent-AdultSS}                     name:"VocabPC Adolescent-Adult SS"
-${4BasicPCS}                                     name:"4-Basic PCS"
+${4BasicPCS}                                     name:"Simple 4-Basic PCS"
 ${communicationJourneyAphasiaPCS}                name:"Communication Journey Aphasia PCS"
 ${communicationJourneyAphasiaUKPCS}              name:"Communication Journey Aphasia UK PCS"
 ${engageForiOSPCS}                               name:"Engage for iOS PCS"
@@ -90,12 +90,14 @@ ${sinSintaxis4x4EnglishPCS}                      name:"sin sintaxis 4x4 English 
 ${sintaxis4x5EnglishPCS}                         name:"sintaxis 4x5 English PCS"
 ${spellingPCS}                                   name:"Spelling PCS"
 ${vocabPCAdolescent-AdultPCS}                    name:"VocabPC Adolescent-Adult PCS"
-${wordPower20SimplySS}                           name:"WordPower20 Simply SS"
+${wordPower25SS}                                 name:"WordPower25 SS"
 ${wordPower25Touch&ScanSS}                       name:"WordPower25 Touch & Scan SS"
 ${wordPower42BasicSS}                            name:"WordPower42 Basic SS"
 ${wordPower42SS}                                 name:"WordPower42 SS"
 ${wordPower48SS}                                 name:"WordPower48 SS"
+${wordPower48BasicSS}                            name:"WordPower48 Basic SS"
 ${wordPower60SS}                                 name:"WordPower60 SS"
+${wordPower60BasicSS}                            name:"WordPower60 Basic SS"
 ${wordPower80SS}                                 name:"WordPower80 SS"
 ${wordPower108SS}                                name:"WordPower108 SS"
 ${wordPower108wKeyboardSS}                       name:"WordPower108 w Keyboard SS"
@@ -127,9 +129,9 @@ ${wordPower80PCS}                                name:"WordPower80 PCS"
 ${wordPower108PCS}                               name:"WordPower108 PCS"
 ${wordPower108wKeyboardPCS}                      name:"WordPower108 w Keyboard PCS"
 ${wordPower140Scan&TouchPCS}                     name:"WordPower140 Scan & Touch PCS"
-${lamp84Full}                                    name:"LAMP 84 Full"
-${lamp84OneHit}                                  name:"LAMP 84 One Hit"
-${lamp84Transition}                              name:"LAMP 84 Transition"
+${lampWFLEnglish1Hit}                            name:"LAMP WFL - English 1-Hit"
+${lampWFLEnglishFull}                            name:"LAMP WFL - English Full"
+${lampWFLEnglishTransition}                      name:"LAMP WFL - English Transition"
 ${essence60}                                     name:"Essence 60"
 ${essence84}                                     name:"Essence 84"
 ${pixon}                                         name:"Pixon"
@@ -171,12 +173,12 @@ ${ABC50Metacom3.0}                               name:"ABC 50 Metacom 3.0"
 ${ABC60Metacom3.0}                               name:"ABC 60 Metacom 3.0"
 ${EKS_15_2.1}                                    name:"EKS 15 2.1"
 ${EKS_45_2.1}                                    name:"EKS 45 2.1"
-${loGoFoXX15_2.0}                                name:"LoGoFoXX 15 2.0"
-${loGoFoXX24_2.0}                                name:"LoGoFoXX 24 2.0"
-${loGoFoXX32_2.0}                                name:"LoGoFoXX 32 2.0"
-${loGoFoXX60_2.0}                                name:"LoGoFoXX 60 2.0"
-${loGoFoXX84_1.0}                                name:"LoGoFoXX 84 1.0"
-${multiFoXX24_1.1}                               name:"MultiFoXX 24 1.1"
+${loGoFoXX15}                                    name:"LoGoFoXX 15"
+${loGoFoXX24}                                    name:"LoGoFoXX 24"
+${loGoFoXX32}                                    name:"LoGoFoXX 32"
+${loGoFoXX60}                                    name:"LoGoFoXX 60"
+${loGoFoXX84}                                    name:"LoGoFoXX 84"
+${multiFoXX24}                                   name:"MultiFoXX 24"
 ${multiFoXX45}                                   name:"MultiFoXX 45"
 ${rehaFoXX1.02}                                  name:"RehaFoXX 1.02"
 
@@ -380,7 +382,8 @@ Create a new vocabulary file
 
 # ----------------------------------OTHERS-----------------------------------------------------
 Maximize the window
-    RPA.Desktop.Press Keys    alt    space
+    RPA.Desktop.Press Keys    alt
+    RPA.Desktop.Press Keys    space
     RPA.Desktop.Press Keys    x
 
 Select Text By Shifting Left

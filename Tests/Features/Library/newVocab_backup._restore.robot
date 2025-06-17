@@ -17,7 +17,7 @@ Reach "4-Basic SS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:SymbolStix    ${4BasicSS}
+    Select vocabulary    name:English    name:SymbolStix    NONE    ${4BasicSS}
 
 Reach "New Vocab" modal
     Reach Library of vocabs    l
@@ -39,7 +39,6 @@ Create a new vocab
     Send Keys    id:1034    new_vocab  #give a new name to the vocab
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    ${ok_btn_id2}    #BUG
     RPA.Windows.Get Element    name:Page
 
 Create a new page
@@ -56,7 +55,6 @@ Create a new page
     Should Be Equal As Integers    ${columns}    11
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    name:Close
 
 Assert that the vocab and the page were created
     # Assert that the page was created

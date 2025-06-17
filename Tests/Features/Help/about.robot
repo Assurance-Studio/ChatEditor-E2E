@@ -17,7 +17,7 @@ Reach "4-Basic SS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:SymbolStix    ${4BasicSS}
+    Select vocabulary    name:English    name:SymbolStix    NONE    ${4BasicSS}
 
 Reach "About" modal
     RPA.Desktop.Press Keys    alt
@@ -30,7 +30,7 @@ Reach "About" modal
     Should Contain    ${versionNumber}    Version
     ${symbolSets}=    RPA.Windows.Get Text    id:1511
     Should Contain    ${symbolSets}    SymbolStix Symbols
-    ${copyrightYear}=    RPA.Windows.Get Text    name:"Copyright© 2024 PRC-Saltillo Corporation"
+    ${copyrightYear}=    RPA.Windows.Get Text    name:"Copyright© 2025 PRC-Saltillo Corporation"
     Should Match Regexp    ${copyrightYear}    Copyright© \\d{4} PRC-Saltillo Corporation
 
 Closing the "About" box

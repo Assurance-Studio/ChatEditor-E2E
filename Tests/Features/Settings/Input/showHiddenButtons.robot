@@ -17,13 +17,13 @@ Reach "4-Basic SS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:SymbolStix    ${4BasicSS}
+    Select vocabulary    name:English    name:SymbolStix    NONE    ${4BasicSS}
 
 Reach "Hide Mode"
     Set Resolution    ${window}    1800    800
     RPA.Windows.Click    ${edit_mode_btn}
     ${message}=    RPA.Windows.Get Text    id:65535
-    Should Contain    ${message}    The vocabulary "4-Basic SS" is an Original and cannot be modified. A copy must be made in order to edit.
+    Should Contain    ${message}    The vocabulary "Simple 4-Basic SS" is an Original and cannot be modified. A copy must be made in order to edit.
     RPA.Windows.Click    id:6
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter

@@ -15,7 +15,7 @@ Validate "4-Basic PCS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:PCS    ${4BasicPCS}
+    Select vocabulary    name:English    name:PCS    NONE    ${4BasicPCS}
 
 Assertions
     # Click on a button's text - 4-Basic PCS
@@ -31,12 +31,12 @@ Assertions
     # Check to see if the dictionary's name is included in the text box - 4-Basic PCS
     RPA.Windows.Click    ${edit_mode_btn}
     ${message}=    RPA.Windows.Get Text    id:65535
-    Should Contain    ${message}    The vocabulary "4-Basic PCS"
+    Should Contain    ${message}    The vocabulary "Simple 4-Basic PCS"
     RPA.Windows.Click    id:7
 
     # Check to see if the dictionary's 'name' attribute is its actual name - 4-Basic PCS
     RPA.Desktop.Press Keys    alt    l
     RPA.Windows.Click    name:English
     RPA.Windows.Click    name:PCS
-    ${name}=    RPA.Windows.Get Attribute    name:"4-Basic PCS (Current)"    Name
-    Should Be Equal    ${name}    4-Basic PCS (Current)
+    ${name}=    RPA.Windows.Get Attribute    name:"Simple 4-Basic PCS (Current)"    Name
+    Should Be Equal    ${name}    Simple 4-Basic PCS (Current)
