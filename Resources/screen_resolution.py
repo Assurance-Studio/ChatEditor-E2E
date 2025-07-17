@@ -54,3 +54,24 @@ def click_on_button_with_text(text, image, conf):
         print(f"I clicked on the button with the text '{text}'.")
     else:
         print(f"The button with the text '{text}' was not found on the screen.")
+
+def right_click_on_button_with_text(text, image, conf):
+    # This time is necessary for the image to load
+    time.sleep(2)
+
+    # Get the current working directory
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Move one directory up from current_dir
+    base_dir = os.path.abspath(os.path.join(current_dir, os.pardir))
+    image_path = os.path.join(base_dir, 'images', 'vocabularies', image)
+
+    # Locate all positions on the screen that match the image
+    button_positions = list(pyautogui.locateAllOnScreen(image_path, grayscale=True, confidence=conf))
+
+    if button_positions:
+        # Right-click on the first matched position
+        pyautogui.rightClick(button_positions[0])
+        print(f"I right-clicked on the button with the text '{text}'.")
+    else:
+        print(f"The button with the text '{text}' was not found on the screen.")

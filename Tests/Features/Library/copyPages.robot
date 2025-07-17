@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Check "Transfer - Vocabs To File" feature
+Documentation       Check "Copy Pages" feature
 Resource            ../../../Resources/resources.robot
 Resource            ../../../Resources/vocabularyAssertions.robot
 
@@ -64,38 +64,38 @@ Reach "Transfer Vocabs To File" modal
     RPA.Desktop.Press Keys    right
     RPA.Desktop.Press Keys    right
     RPA.Desktop.Press Keys    right
+    RPA.Desktop.Press Keys    right
     RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    id:33691
-    RPA.Windows.Get Element    name:"Transfer Vocabs To File"
+    RPA.Windows.Get Element    name:"Copy Multiple Pages"
+    RPA.Windows.Get Element    name:"new_vocab (Current)"
+    RPA.Windows.Get Element    ${myResources}
+    RPA.Windows.Get Element    ${english}
 
-Transfer the vocab to file
+Check the page desired for transfer
+    RPA.Windows.Click    ${english}
+    RPA.Windows.Click    ${symbolStix}
+    RPA.Windows.Double Click    ${communicationJourneyAphasiaSS}
+    RPA.Windows.Click    name:".Template - Aphasia"
+    RPA.Desktop.Press Keys    space
     RPA.Windows.Click    name:"new_vocab (Current)"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    enter
-    #Set the path where we want the vocabulary to be saved
-    RPA.Windows.Right Click    id:41477
-    RPA.windows.Click    id:1280
-    Send Keys    id:41477    ${transferVocabsToFilePath}
-    #Transfer the vocab
-    RPA.windows.Click    ${ok_btn_id1}
-    RPA.Windows.Get Element    name:"Resource Browser - Library"    timeout=15
+    RPA.Desktop.Press Keys    space
+    RPA.Windows.Double Click    name:".Template - Aphasia"
+    RPA.Windows.Double Click    name:"new_vocab (Current)"
+    #Check that Transfer button become bold when left is check marked & vocab file is chosen on right
+    ${transfer}=    Get Attribute    id:1554    IsEnabled
+    Should Be Equal    ${transfer}    1    formater=int|boolean
 
-Assert that the vocab was correctly transferred
-    RPA.Windows.Click    name:"Resource Browser - Library"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    id:33691
-    RPA.Windows.Click    name:"new_vocab (Current)"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    enter
-    #Set the path where we want the vocabulary to be saved
-    RPA.Windows.Right Click    id:41477
-    RPA.windows.Click    id:1280
-    Send Keys    id:41477    ${transferVocabsToFilePath}
-    #Assert that the vocab is already exists
-    RPA.windows.Click    ${ok_btn_id1}
-    RPA.Windows.Get Element    name:"new_vocab.ce already exists.\r\nDo you want to replace it?"
+Transfer the page
+    #Click on the Transfer button
+    RPA.Windows.Click    id:1554
+    ${message}=    RPA.Windows.Get Text    id:65535
+    Should Contain    ${message}    Number of pages copied: 1
+
+Check that the page was copied
+    RPA.Windows.Click    ${ok_btn_id2}
+    RPA.Windows.Click    ${ok_btn_id1}
+    RPA.Windows.Click    name:Close
+    RPA.Windows.Click    ${edit_mode_btn}
+    RPA.Windows.Click    name:Pages
+    #Check that the copied page exists in the custom vocabulary
+    RPA.Windows.Get Element    name:".Template - Aphasia"

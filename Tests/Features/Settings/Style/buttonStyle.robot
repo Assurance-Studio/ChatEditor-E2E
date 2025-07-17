@@ -60,7 +60,7 @@ Turn off the appearance of navigation icons
     RPA.windows.Click    id:10005
     #Check that the "Size" setting for navigation icons is disabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    0
+    Should Be Equal    ${isEnabled}    0    formater=int|boolean
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
     ${text}    Set Variable    KEYBOARD
@@ -74,7 +74,7 @@ Turn on the appearance of navigation icons
     RPA.windows.Click    id:10005
     #Check that the "Size" setting for navigation icons is enabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    1
+    Should Be Equal    ${isEnabled}    1    formater=int|boolean
     #Change the size of the navigation icons
     RPA.windows.Click    id:1102
     RPA.Windows.Click    name:"1 - Smallest"
@@ -102,7 +102,7 @@ Check the "Saturation" setting
     RPA.windows.Click    id:1296
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0
+    Should Be Equal    ${isEnabled}    0    formater=int|boolean
     #Check that the saturation percent adjust
     RPA.windows.Click    id:1296
     RPA.windows.Click    id:1297

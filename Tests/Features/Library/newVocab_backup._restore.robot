@@ -91,11 +91,11 @@ Create the Backup
     RPA.Desktop.Press Keys    enter
     # Confirm that the "Continue buton is disabled before type "yes"
     ${continue_button}=    Get Attribute    id:1    IsEnabled
-    Should Be Equal    ${continue_button}    0
+    Should Be Equal    ${continue_button}    0    formater=int|boolean
     Send Keys    id:1344    yes
     # Confirm that the "Continue buton is enabled after type "yes"
     ${continue_button}=    Get Attribute    id:1    IsEnabled
-    Should Be Equal    ${continue_button}    1
+    Should Be Equal    ${continue_button}    1    formater=int|boolean
     RPA.Windows.Click    ${ok_btn_id1}
 
 Assert that the backup of libraries was successful
@@ -124,11 +124,11 @@ Create the Restore
     RPA.Desktop.Press Keys    enter
     # Confirm that the "Continue" buton is disabled before type "yes"
     ${continue_button}=    Get Attribute    id:1    IsEnabled
-    Should Be Equal    ${continue_button}    0
+    Should Be Equal    ${continue_button}    0    formater=int|boolean
     Send Keys    id:1344    yes
     # Confirm that the "Continue" buton is enabled after type "yes"
     ${continue_button}=    Get Attribute    id:1    IsEnabled
-    Should Be Equal    ${continue_button}    1
+    Should Be Equal    ${continue_button}    1    formater=int|boolean
     RPA.Windows.Click    ${ok_btn_id1}
 
 Assert that the restore of libraries was successful

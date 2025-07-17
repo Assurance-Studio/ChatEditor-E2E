@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Check "Transfer - Vocabs To File" feature
+Documentation       Check "Transfer - Pages To File" feature
 Resource            ../../../Resources/resources.robot
 Resource            ../../../Resources/vocabularyAssertions.robot
 
@@ -11,9 +11,9 @@ Library    Dialogs
 *** Test Cases ***
 Reach "4-Basic SS" vocabulary
     Create new configuration of ChatEditor
-    Select Touch Chat
+    Select Nova Chat
     Select language            ${english}
-    Select Symbol Set: SymbolStix without aditional vocabularies
+    Select Symbol Set: SymbolStix
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
@@ -56,7 +56,7 @@ Create a new page
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
-Reach "Transfer Vocabs To File" modal
+Reach "Transfer Pages To File" modal
     RPA.Windows.Click    ${edit_mode_btn}
     Reach Library of vocabs    l
     RPA.Desktop.Press Keys    alt
@@ -65,37 +65,22 @@ Reach "Transfer Vocabs To File" modal
     RPA.Desktop.Press Keys    right
     RPA.Desktop.Press Keys    right
     RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    id:33691
-    RPA.Windows.Get Element    name:"Transfer Vocabs To File"
+    RPA.Windows.Click    id:33693
+    RPA.Windows.Get Element    name:"Create a Page Set"
 
-Transfer the vocab to file
-    RPA.Windows.Click    name:"new_vocab (Current)"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    enter
-    #Set the path where we want the vocabulary to be saved
+Export the page
+    RPA.Windows.Click    ${myResources}
+    RPA.Windows.Double Click    name:"new_vocab"
+    RPA.Windows.Click    name:"new_page (Current)"
+    RPA.Desktop.Press Keys    space
+    RPA.Windows.Double Click    name:"new_page (Current)"
+    RPA.Windows.Click    id:1555
+    #Set the path where we want the page to be saved
     RPA.Windows.Right Click    id:41477
     RPA.windows.Click    id:1280
     Send Keys    id:41477    ${transferVocabsToFilePath}
     #Transfer the vocab
     RPA.windows.Click    ${ok_btn_id1}
     RPA.Windows.Get Element    name:"Resource Browser - Library"    timeout=15
-
-Assert that the vocab was correctly transferred
-    RPA.Windows.Click    name:"Resource Browser - Library"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    id:33691
-    RPA.Windows.Click    name:"new_vocab (Current)"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    enter
-    #Set the path where we want the vocabulary to be saved
-    RPA.Windows.Right Click    id:41477
-    RPA.windows.Click    id:1280
-    Send Keys    id:41477    ${transferVocabsToFilePath}
-    #Assert that the vocab is already exists
-    RPA.windows.Click    ${ok_btn_id1}
-    RPA.Windows.Get Element    name:"new_vocab.ce already exists.\r\nDo you want to replace it?"
+    ${message}=    RPA.Windows.Get Text    id:65535
+    Should Contain    ${message}    Number of pages copied: 1

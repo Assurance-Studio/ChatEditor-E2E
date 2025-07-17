@@ -24,20 +24,20 @@ Check that the language is associated with the available configuration for Germa
     RPA.Windows.Click    Sprache
     # German and English are enabled
     ${deutsch}=    Get Attribute    id:33303    IsEnabled
-    Should Be Equal    ${deutsch}    1
+    Should Be Equal    ${deutsch}    1    formater=int|boolean
      ${englisch}=    Get Attribute    id:33299    IsEnabled
-    Should Be Equal    ${englisch}    1
+    Should Be Equal    ${englisch}    1    formater=int|boolean
     # Other languages are disabled
     ${kanadFranzosich}=    Get Attribute    id:33698    IsEnabled
-    Should Be Equal    ${kanadFranzosich}    0
+    Should Be Equal    ${kanadFranzosich}    0    formater=int|boolean
     ${niederlandisch}=    Get Attribute    id:1405    IsEnabled
-    Should Be Equal    ${niederlandisch}    0
+    Should Be Equal    ${niederlandisch}    0    formater=int|boolean
     ${americanSpanich}=    Get Attribute    id:33699    IsEnabled
-    Should Be Equal    ${americanSpanich}    0
+    Should Be Equal    ${americanSpanich}    0    formater=int|boolean
     ${hebraisch}=    Get Attribute    id:33700    IsEnabled
-    Should Be Equal    ${hebraisch}    0
+    Should Be Equal    ${hebraisch}    0    formater=int|boolean
     ${arabisch}=    Get Attribute    id:33701    IsEnabled
-    Should Be Equal    ${arabisch}    0
+    Should Be Equal    ${arabisch}    0    formater=int|boolean
 
 Check that the menus change to German
     RPA.Windows.Get Element    name:Einstellungen
