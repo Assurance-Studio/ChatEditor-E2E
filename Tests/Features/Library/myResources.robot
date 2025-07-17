@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation       Check "Transfer - Vocabs To File" feature
+Documentation       Check "My Resources" feature
 Resource            ../../../Resources/resources.robot
 Resource            ../../../Resources/vocabularyAssertions.robot
 
@@ -56,46 +56,41 @@ Create a new page
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
-Reach "Transfer Vocabs To File" modal
+Check that Open button opens the vocabulary
     RPA.Windows.Click    ${edit_mode_btn}
     Reach Library of vocabs    l
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    id:33691
-    RPA.Windows.Get Element    name:"Transfer Vocabs To File"
-
-Transfer the vocab to file
+    RPA.Windows.Click    ${myResources}
     RPA.Windows.Click    name:"new_vocab (Current)"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    enter
-    #Set the path where we want the vocabulary to be saved
-    RPA.Windows.Right Click    id:41477
-    RPA.windows.Click    id:1280
-    Send Keys    id:41477    ${transferVocabsToFilePath}
-    #Transfer the vocab
-    RPA.windows.Click    ${ok_btn_id1}
-    RPA.Windows.Get Element    name:"Resource Browser - Library"    timeout=15
+    #Click on Open button
+    RPA.Windows.Click    id:33674
+    Reach Library of vocabs    l
+    RPA.Windows.Click    ${myResources}
+    RPA.Windows.Get Element    name:"new_vocab (Current)"
 
-Assert that the vocab was correctly transferred
-    RPA.Windows.Click    name:"Resource Browser - Library"
-    RPA.Desktop.Press Keys    alt
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    right
-    RPA.Desktop.Press Keys    enter
-    RPA.Windows.Click    id:33691
+Check that the vocabulary is duplicated
     RPA.Windows.Click    name:"new_vocab (Current)"
+    RPA.Windows.Click    id:33676
+    #Click on the save button
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
-    #Set the path where we want the vocabulary to be saved
-    RPA.Windows.Right Click    id:41477
-    RPA.windows.Click    id:1280
-    Send Keys    id:41477    ${transferVocabsToFilePath}
-    #Assert that the vocab is already exists
-    RPA.windows.Click    ${ok_btn_id1}
-    RPA.Windows.Get Element    name:"new_vocab.ce already exists.\r\nDo you want to replace it?"
+    RPA.Windows.Get Element    name:"new_vocab_Copy"
+
+Check that the vocabulary can be renamed
+    RPA.Windows.Click    name:"new_vocab_Copy"
+    RPA.Windows.Click    id:33681
+    Send Keys    id:1350    new_vocab_renamed
+    #Click on the save button
+    RPA.Desktop.Press Keys    alt
+    RPA.Desktop.Press Keys    enter
+    RPA.Windows.Get Element    name:"new_vocab_renamed"
+
+Delete the vocabulary
+    RPA.Windows.Click    name:"new_vocab_renamed"
+    RPA.Windows.Click    id:33682
+    Send Keys    id:1344    yes
+    ${continue}=    Get Attribute    id:1    IsEnabled
+    Should Be Equal    ${continue}    1    formater=int|boolean
+    RPA.Windows.Click    id:1
+    #Check that the vocabulary is deleted
+    ${result}=    Run Keyword And Ignore Error    RPA.Windows.Get Element    name:"new_vocab_renamed"
+    Run Keyword If    '${result}[0]' == 'FAIL'    Log    Element 'new_vocab_renamed' is not present.

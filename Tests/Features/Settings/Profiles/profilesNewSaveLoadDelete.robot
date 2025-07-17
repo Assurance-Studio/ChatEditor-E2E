@@ -42,7 +42,7 @@ Create a new profile
     Attach Window    class_name:#32770
     Window Title Should Be    ChatEditor • (EnglishUser)
     ${isEnabled}=    Get Attribute    name:"ChatEditor • (EnglishUser)"    IsEnabled
-    Should Be Equal    ${isEnabled}    1
+    Should Be Equal    ${isEnabled}    1    formater=int|boolean
 
 Make some changes to the profile settings
     #Button Style
@@ -53,12 +53,12 @@ Make some changes to the profile settings
     RPA.windows.Click    id:10005
     #Check that the "Size" setting for navigation icons is disabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    0
+    Should Be Equal    ${isEnabled}    0    formater=int|boolean
     #Uncheck "Saturation"
     RPA.windows.Click    id:1296
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0
+    Should Be Equal    ${isEnabled}    0    formater=int|boolean
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
@@ -93,7 +93,7 @@ Load the profile
     Should Be Equal    ${isEnabled}    0
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0
+    Should Be Equal    ${isEnabled}    0    formater=int|boolean
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
@@ -107,10 +107,10 @@ Load Default Settings
     RPA.Windows.Click    Button Style...
     #Check that the "Size" setting for navigation icons is enabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    1
+    Should Be Equal    ${isEnabled}    1    formater=int|boolean
     #Check that the saturation percent is enabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    1
+    Should Be Equal    ${isEnabled}    1    formater=int|boolean
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 

@@ -24,7 +24,7 @@ Check that the language is associated with the available configuration for Germa
     RPA.Windows.Click    Taal
     # Dutch and English are enabled
     ${nederlands}=    Get Attribute    id:1405    IsEnabled
-    Should Be Equal    ${nederlands}    1
+    Should Be Equal    ${nederlands}    1    formater=int|boolean
      ${engels}=    Get Attribute    id:33299    IsEnabled
     Should Be Equal    ${engels}    1
     # Other languages are disabled

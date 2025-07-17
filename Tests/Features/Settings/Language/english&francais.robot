@@ -24,20 +24,20 @@ Check that the language is associated with the available configuration for Frenc
     RPA.Windows.Click    Langue
     # French and English are enabled
     ${francaisCanadien}=    Get Attribute    id:33698    IsEnabled
-    Should Be Equal    ${francaisCanadien}    1
+    Should Be Equal    ${francaisCanadien}    1    formater=int|boolean
      ${english}=    Get Attribute    id:33299    IsEnabled
-    Should Be Equal    ${english}    1
+    Should Be Equal    ${english}    1    formater=int|boolean
     # Other languages are disabled
     ${espagnolAmericaine}=    Get Attribute    id:33699    IsEnabled
-    Should Be Equal    ${espagnolAmericaine}    0
+    Should Be Equal    ${espagnolAmericaine}    0    formater=int|boolean
     ${hollandais}=    Get Attribute    id:1405    IsEnabled
-    Should Be Equal    ${hollandais}    0
+    Should Be Equal    ${hollandais}    0    formater=int|boolean
     ${allemand}=    Get Attribute    id:33303    IsEnabled
-    Should Be Equal    ${allemand}    0
+    Should Be Equal    ${allemand}    0    formater=int|boolean
     ${hebreu}=    Get Attribute    id:33700    IsEnabled
-    Should Be Equal    ${hebreu}    0
+    Should Be Equal    ${hebreu}    0    formater=int|boolean
     ${arabe}=    Get Attribute    id:33701    IsEnabled
-    Should Be Equal    ${arabe}    0
+    Should Be Equal    ${arabe}    0    formater=int|boolean
 
 Check that the menus change to the French
     RPA.Windows.Get Element    name:Paramètres

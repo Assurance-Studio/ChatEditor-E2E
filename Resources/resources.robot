@@ -231,6 +231,7 @@ ${boardWithAdditions}                            name:"לוח ׳מקלדת׳ ע�
 # ----------------------------------CONFIGURATION LANGUAGES-----------------------------------------------------
 ${configuration}                                 name:"Create New Configuration"
 ${window}                                        ChatEditor • (EnglishUser)
+${windowEditMode}                                ChatEditor • EDIT MODE:  Simple 4-Basic SS_Copy – 4-Main
 ${windowNederlands}                              ChatEditor • (NederlandsUser)
 ${windowFrançais}                                ChatEditor • (FrançaisUser)
 ${windowDeutsch}                                 ChatEditor • (DeutschUser)
