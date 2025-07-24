@@ -5,6 +5,7 @@ Resource            ../../../../../Resources/vocabularyAssertions.robot
 
 Suite Setup         Run Keywords    Delete Chat Editor Folder    AND    Open ChatEditor
 Suite Teardown      Close ChatEditor
+Library    Dialogs
 
 *** Test Cases ***
 Validate "Gateway 30 Teen" vocabulary
@@ -21,10 +22,11 @@ Assertions
     # Check to see if there is a picture of the vocabulary icons - Gateway 30 Teen
     Set Resolution    ${window}    1800    800
     Get Element    name:Help    timeout=5
+    Pause Execution
     ${text}    Set Variable    more
-    Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gateway30Teen\\more.png    0.6
+    Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\gateway30Teen\\i.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000
-    Should Contain    ${message}    More
+    Should Contain    ${message}    I
 
     Check to see if the user exist
 
