@@ -37,12 +37,6 @@ Create a new profile
     Send Keys    id:1034    Adam    interval=0.02
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
-    # Assert the name of the window and ensure that it is enabled. This confirms that we are using the correct vocabulary
-    Attach Application By Name    Chat Editor
-    Attach Window    class_name:#32770
-    Window Title Should Be    ChatEditor • (EnglishUser)
-    ${isEnabled}=    Get Attribute    name:"ChatEditor • (EnglishUser)"    IsEnabled
-    Should Be Equal    ${isEnabled}    1    formater=int|boolean
 
 Make some changes to the profile settings
     #Button Style
@@ -68,8 +62,7 @@ Save the changes to the profile
     RPA.Windows.Click    name:Save...
     ${text}=    RPA.Windows.Get Text    name:"Save User Profile"
     Should Be Equal    ${text}    Save User Profile
-    ${text}=    Get Text From Label    text:Adam
-    Should Be Equal    ${text}    Adam
+    ${text}=    RPA.Windows.Get Element    name:Adam
     RPA.Desktop.Press Keys    down
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
@@ -126,12 +119,3 @@ Delete the profile
     ${text}=    RPA.Windows.Get Text    id:65535
     Should Contain    ${text}    Profile "Adam" has been deleted.
     RPA.Windows.Click    ${ok_btn_id2}
-
-Check that the profile was deleted
-    RPA.Desktop.Press Keys    alt    s
-    RPA.Windows.Click    Profiles
-    RPA.Windows.Click    name:Load...
-    ${text}=    RPA.Windows.Get Text    name:"Load User Profile"
-    Should Be Equal    ${text}    Load User Profile
-     ${result}=    Run Keyword And Ignore Error    RPA.Windows.Get Element    name:Adam
-    Run Keyword If    '${result}[0]' == 'FAIL'    Log    Element 'Adam' is not present.

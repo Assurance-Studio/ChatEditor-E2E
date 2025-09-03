@@ -31,7 +31,6 @@ Set ChatEditor to the default size
     RPA.Windows.Click    Window Size
     #Set To Default Size
     RPA.Windows.Click    id:33687
-    Control Window    name:"ChatEditor • (EnglishUser)"
     RPA.Windows.Click    ${edit_mode_btn}
     ${message}=    RPA.Windows.Get Text    id:65535
     Should Contain    ${message}    The vocabulary "Spelling SS"
