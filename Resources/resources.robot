@@ -5,7 +5,7 @@ Library     RPA.Desktop
 Library     String
 Library     screen_resolution.py
 Library     pyautogui
-Library     WhiteLibrary
+Library     WhiteLibrary    run_on_failure=None
 
 *** Variables ***
 # ----------------------------------PATH-----------------------------------------------------
@@ -246,6 +246,7 @@ ${windowHebrew}                                  ChatEditor • (HebrewUser)
 *** Keywords ***
 # ----------------------------------SETUP & TEARDOWN-----------------------------------------------------
 Open ChatEditor
+    Register Keyword To Run On Failure    Take Custom Failure Screenshot
     Windows Run    ${chatEditorPath}
 
 Close ChatEditor

@@ -55,6 +55,7 @@ def click_on_button_with_text(text, image, conf):
     else:
         print(f"The button with the text '{text}' was not found on the screen.")
 
+
 def right_click_on_button_with_text(text, image, conf):
     # This time is necessary for the image to load
     time.sleep(2)
@@ -75,3 +76,15 @@ def right_click_on_button_with_text(text, image, conf):
         print(f"I right-clicked on the button with the text '{text}'.")
     else:
         print(f"The button with the text '{text}' was not found on the screen.")
+
+
+def capture_screenshot_to_path(path):
+    """Capture the current desktop and save it to the provided ``path``."""
+    expanded = os.path.expandvars(os.path.expanduser(str(path)))
+    directory = os.path.dirname(expanded)
+    if directory and not os.path.exists(directory):
+        os.makedirs(directory, exist_ok=True)
+    screenshot = pyautogui.screenshot()
+    screenshot.save(expanded)
+    logging.info("Saved screenshot to %s", expanded)
+    return expanded
