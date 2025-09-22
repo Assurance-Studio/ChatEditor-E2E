@@ -21,7 +21,6 @@ Assertions
     # Click on a button's text - LAMP WFL - Français Complet
     Set Resolution    ${windowFrançais}   1800    800
     Get Element    name:Aide    timeout=5
-    Pause Execution
     ${text}    Set Variable    finir
     Click On Button With Text    ${text}    LAMPwordsForLife\\lampWFLFrancaisComplet\\finir.png    0.6
 

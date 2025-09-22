@@ -24,20 +24,20 @@ Check that the language is associated with the available configuration
     RPA.Windows.Click    Sprache
     # German is enabled
     ${deutsch}=    Get Attribute    id:33303    IsEnabled
-    Should Be Equal    ${deutsch}    1    formater=int|boolean
+    Should Contain Any    ${deutsch}    1    True    "1"    "True"
     # Other languages are disabled
     ${kanadFranzosich}=    Get Attribute    id:33698    IsEnabled
-    Should Be Equal    ${kanadFranzosich}    0    formater=int|boolean
+    Should Contain Any    ${kanadFranzosich}    0    False    "0"    "False"
     ${niederlandisch}=    Get Attribute    id:1405    IsEnabled
-    Should Be Equal    ${niederlandisch}    0    formater=int|boolean
+    Should Contain Any    ${niederlandisch}    0    False    "0"    "False"
     ${americanSpanich}=    Get Attribute    id:33699    IsEnabled
-    Should Be Equal    ${americanSpanich}    0    formater=int|boolean
+    Should Contain Any    ${americanSpanich}    0    False    "0"    "False"
     ${hebraisch}=    Get Attribute    id:33700    IsEnabled
-    Should Be Equal    ${hebraisch}    0    formater=int|boolean
+    Should Contain Any    ${hebraisch}    0    False    "0"    "False"
     ${arabisch}=    Get Attribute    id:33701    IsEnabled
-    Should Be Equal    ${arabisch}    0    formater=int|boolean
+    Should Contain Any    ${arabisch}    0    False    "0"    "False"
     ${englisch}=    Get Attribute    id:33299    IsEnabled
-    Should Be Equal    ${englisch}    0    formater=int|boolean
+    Should Contain Any    ${englisch}    0    False    "0"    "False"
 
 Check that the menus change to the chosen language
     RPA.Windows.Get Element    name:Einstellungen

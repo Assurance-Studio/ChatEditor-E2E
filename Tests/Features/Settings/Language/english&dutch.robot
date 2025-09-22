@@ -24,20 +24,20 @@ Check that the language is associated with the available configuration for Germa
     RPA.Windows.Click    Taal
     # Dutch and English are enabled
     ${nederlands}=    Get Attribute    id:1405    IsEnabled
-    Should Be Equal    ${nederlands}    1    formater=int|boolean
+    Should Contain Any    ${nederlands}    1    True    "1"    "True"
      ${engels}=    Get Attribute    id:33299    IsEnabled
-    Should Be Equal    ${engels}    1
+    Should Contain Any    ${engels}    1    True    "1"    "True"
     # Other languages are disabled
     ${canadiesFrans}=    Get Attribute    id:33698    IsEnabled
-    Should Be Equal    ${canadiesFrans}    0
+    Should Contain Any    ${canadiesFrans}    0    False    "0"    "False"
     ${duits}=    Get Attribute    id:33303    IsEnabled
-    Should Be Equal    ${duits}    0
+    Should Contain Any    ${duits}    0    False    "0"    "False"
     ${amerikaansSpaans}=    Get Attribute    id:33699    IsEnabled
-    Should Be Equal    ${amerikaansSpaans}    0
+    Should Contain Any    ${amerikaansSpaans}    0    False    "0"    "False"
     ${hebreeuws}=    Get Attribute    id:33700    IsEnabled
-    Should Be Equal    ${hebreeuws}    0
+    Should Contain Any    ${hebreeuws}    0    False    "0"    "False"
     ${arabisch}=    Get Attribute    id:33701    IsEnabled
-    Should Be Equal    ${arabisch}    0
+    Should Contain Any    ${arabisch}    0    False    "0"    "False"
 
 Check that the menus change to Dutch
     RPA.Windows.Get Element    name:Instellingen

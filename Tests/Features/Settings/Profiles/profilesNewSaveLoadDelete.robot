@@ -47,12 +47,12 @@ Make some changes to the profile settings
     RPA.windows.Click    id:10005
     #Check that the "Size" setting for navigation icons is disabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     #Uncheck "Saturation"
     RPA.windows.Click    id:1296
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
@@ -83,10 +83,10 @@ Load the profile
     RPA.Windows.Click    Style
     RPA.Windows.Click    Button Style...
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    0
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
@@ -100,10 +100,10 @@ Load Default Settings
     RPA.Windows.Click    Button Style...
     #Check that the "Size" setting for navigation icons is enabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    1    formater=int|boolean
+    Should Contain Any    ${isEnabled}    1    True    "1"    "True"
     #Check that the saturation percent is enabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    1    formater=int|boolean
+    Should Contain Any    ${isEnabled}    1    True    "1"    "True"
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 

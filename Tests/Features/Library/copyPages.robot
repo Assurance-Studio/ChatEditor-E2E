@@ -83,7 +83,7 @@ Check the page desired for transfer
     RPA.Windows.Double Click    name:"new_vocab (Current)"
     #Check that Transfer button become bold when left is check marked & vocab file is chosen on right
     ${transfer}=    Get Attribute    id:1554    IsEnabled
-    Should Be Equal    ${transfer}    1    formater=int|boolean
+    Should Contain Any    ${transfer}    1    True    "1"    "True"
 
 Transfer the page
     #Click on the Transfer button
