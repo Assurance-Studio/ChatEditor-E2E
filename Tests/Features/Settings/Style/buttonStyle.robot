@@ -46,6 +46,9 @@ Use icons for the entire button area
     RPA.windows.Click    id:1099
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
+    #Click the button PHRASES
+    ${text}    Set Variable    PHRASES
+    Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\spellingSS\\phrases.png    0.6
     #Click the button Good Morning
     ${text}    Set Variable    Good Morning
     Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\spellingSS\\goodMorning.png    0.6
@@ -60,11 +63,11 @@ Turn off the appearance of navigation icons
     RPA.windows.Click    id:10005
     #Check that the "Size" setting for navigation icons is disabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
-    ${text}    Set Variable    KEYBOARD
-    Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\spellingSS\\keyboardWithoutNavigationIcons.png    0.6
+    ${text}    Set Variable    TEXTING
+    Click On Button With Text    ${text}    TouchChat\\TouchChatEnglish\\spellingSS\\texting.png    0.6
 
 Turn on the appearance of navigation icons
     RPA.Desktop.Press Keys    alt    s
@@ -74,7 +77,7 @@ Turn on the appearance of navigation icons
     RPA.windows.Click    id:10005
     #Check that the "Size" setting for navigation icons is enabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    1    formater=int|boolean
+    Should Contain Any    ${isEnabled}    1    True    "1"    "True"
     #Change the size of the navigation icons
     RPA.windows.Click    id:1102
     RPA.Windows.Click    name:"1 - Smallest"
@@ -102,7 +105,7 @@ Check the "Saturation" setting
     RPA.windows.Click    id:1296
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     #Check that the saturation percent adjust
     RPA.windows.Click    id:1296
     RPA.windows.Click    id:1297

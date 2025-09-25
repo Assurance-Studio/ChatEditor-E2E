@@ -34,7 +34,7 @@ ${voiceDropbox}                                  id:1016
 # Products
 ${NovaChat/ChatFusion}                           name:"Nova Chat/Chat Fusion"
 ${TouchChat}                                     name:TouchChat
-${wordsForLife}                                  name:"Words For Life (Nova Edition)"
+${LAMPwordsForLife}                              name:"LAMP Words For Life"
 ${dialogue}                                      name:Dialogue
 
 # Languages
@@ -59,7 +59,7 @@ ${symbolStix&Pixon}                              name:"SymbolStix & Pixon"
 ${4BasicSS}                                      name:"Simple 4-Basic SS (Current)"
 ${communicationJourneyAphasiaSS}                 name:"Communication Journey Aphasia SS"
 ${communicationJourneyAphasiaUKSS}               name:"Communication Journey Aphasia UK SS"
-${engageForiOSSS}                                name:"Engage for iOS SS"
+${engageSS}                                      name:"Engage SS"
 ${multiChat15AdolescentSS}                       name:"MultiChat 15 Adolescent SS"
 ${multiChat15AdultSS}                            name:"MultiChat 15 Adult SS"
 ${multiChat15StudentSS}                          name:"MultiChat 15 Student SS"
@@ -76,7 +76,7 @@ ${vocabPCAdolescent-AdultSS}                     name:"VocabPC Adolescent-Adult 
 ${4BasicPCS}                                     name:"Simple 4-Basic PCS"
 ${communicationJourneyAphasiaPCS}                name:"Communication Journey Aphasia PCS"
 ${communicationJourneyAphasiaUKPCS}              name:"Communication Journey Aphasia UK PCS"
-${engageForiOSPCS}                               name:"Engage for iOS PCS"
+${engagePCS}                                     name:"Engage PCS"
 ${multiChat15AdolescentPCS}                      name:"MultiChat 15 Adolescent PCS"
 ${multiChat15AdultPCS}                           name:"MultiChat 15 Adult PCS"
 ${multiChat15StudentPCS}                         name:"MultiChat 15 Student PCS"
@@ -119,7 +119,7 @@ ${exploreAccessSS}                               name: "Explore Access SS"
 ${intermediateScanPCS}                           name: "Intermediate Scan PCS"
 ${exploreAccessPCS}                              name: "Explore Access PCS"
 ${wordPower20SimplyPCS}                          name:"WordPower20 Simply PCS"
-${wordPower25Touch&ScanPCS}                      name:"WordPower25 Touch & Scan PCS"
+${wordPower25PCS}                                name:"WordPower25 PCS"
 ${wordPower42BasicPCS}                           name:"WordPower42 Basic PCS"
 ${wordPower42PCS}                                name:"WordPower42 PCS"
 ${wordPower48PCS}                                name:"WordPower48 PCS"
@@ -131,7 +131,11 @@ ${wordPower108wKeyboardPCS}                      name:"WordPower108 w Keyboard P
 ${wordPower140Scan&TouchPCS}                     name:"WordPower140 Scan & Touch PCS"
 ${lampWFLEnglish1Hit}                            name:"LAMP WFL - English 1-Hit"
 ${lampWFLEnglishFull}                            name:"LAMP WFL - English Full"
-${lampWFLEnglishTransition}                      name:"LAMP WFL - English Transition"
+${lampWFLFrançais1Clic}                          name:"LAMP WFL – Français 1-clic"
+${lampWFLFrançaisComplet}                        name:"LAMP WFL – Français Complet"
+${lampWFLEspanol1Toque}                          name:"LAMP WFL - Español 1 Toque"
+${lampWFLEspanolCompleto}                        name:"LAMP WFL - Español Completo"
+${engage}                                        name:Engage
 ${essence60}                                     name:"Essence 60"
 ${essence84}                                     name:"Essence 84"
 ${pixon}                                         name:"Pixon"
@@ -267,7 +271,7 @@ Select Touch Chat
 
 Select Words For Life (Nova Edition)
     RPA.Windows.Click    ${productDropbox}
-    RPA.Windows.Click    ${wordsForLife}
+    RPA.Windows.Click    ${LAMPwordsForLife}
     RPA.Windows.Click    id:1592
 
 Select Dialogue

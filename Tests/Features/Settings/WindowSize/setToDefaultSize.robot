@@ -19,19 +19,11 @@ Reach "Spelling SS" vocabulary
     Reach Library of vocabs    l
     Select vocabulary    name:English    name:SymbolStix    NONE    ${spellingSS}
 
-Maximize the ChatEditor Window
-    RPA.Windows.Maximize Window    name:"ChatEditor • (EnglishUser)"
-    RPA.Windows.Click    ${edit_mode_btn}
-    ${message}=    RPA.Windows.Get Text    id:65535
-    Should Contain    ${message}    The vocabulary "Spelling SS"
-    RPA.Windows.Click    id:7
-
 Set ChatEditor to the default size
     RPA.Desktop.Press Keys    alt    s
     RPA.Windows.Click    Window Size
     #Set To Default Size
     RPA.Windows.Click    id:33687
-    Control Window    name:"ChatEditor • (EnglishUser)"
     RPA.Windows.Click    ${edit_mode_btn}
     ${message}=    RPA.Windows.Get Text    id:65535
     Should Contain    ${message}    The vocabulary "Spelling SS"

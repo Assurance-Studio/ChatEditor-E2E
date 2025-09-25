@@ -25,20 +25,20 @@ Check that the language is associated with the available configuration for Hebre
     RPA.Windows.Click    	name:שפה
     # Hebrew and English are enabled
     ${hebrew}=    Get Attribute    id:33700    IsEnabled
-    Should Be Equal    ${hebrew}    1    formater=int|boolean
+    Should Contain Any    ${hebrew}    1    True    "1"    "True"
      ${english}=    Get Attribute    id:33299    IsEnabled
-    Should Be Equal    ${english}    1    formater=int|boolean
+    Should Contain Any    ${english}    1    True    "1"    "True"
     # Other languages are disabled
     ${americanSpanish}=    Get Attribute    id:33699    IsEnabled
-    Should Be Equal    ${americanSpanish}    0    formater=int|boolean
+    Should Contain Any    ${americanSpanish}    0    False    "0"    "False"
     ${canadianFrench}=    Get Attribute    id:33698    IsEnabled
-    Should Be Equal    ${canadianFrench}    0    formater=int|boolean
+    Should Contain Any    ${canadianFrench}    0    False    "0"    "False"
     ${dutch}=    Get Attribute    id:1405    IsEnabled
-    Should Be Equal    ${dutch}    0    formater=int|boolean
+    Should Contain Any    ${dutch}    0    False    "0"    "False"
     ${german}=    Get Attribute    id:33303    IsEnabled
-    Should Be Equal    ${german}    0    formater=int|boolean
+    Should Contain Any    ${german}    0    False    "0"    "False"
     ${arabic}=    Get Attribute    id:33701    IsEnabled
-    Should Be Equal    ${arabic}    0    formater=int|boolean
+    Should Contain Any    ${arabic}    0    False    "0"    "False"
 
 Check that the menus change to the Hebrew
     RPA.Windows.Get Element    name:הגדרות

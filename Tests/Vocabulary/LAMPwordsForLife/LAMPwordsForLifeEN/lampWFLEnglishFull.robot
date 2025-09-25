@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Check "LAMP WFL - English Full" ENGLISH vocabulary
-Resource            ../../../../../Resources/resources.robot
-Resource            ../../../../../Resources/vocabularyAssertions.robot
+Resource            ../../../../Resources/resources.robot
+Resource            ../../../../Resources/vocabularyAssertions.robot
 
 Suite Setup         Run Keywords    Delete Chat Editor Folder    AND    Open ChatEditor
 Suite Teardown      Close ChatEditor
@@ -10,6 +10,7 @@ Suite Teardown      Close ChatEditor
 Validate "LAMP WFL - English Full" vocabulary
     Create new configuration of ChatEditor
     Select Words For Life (Nova Edition)
+    Select language    ${english}
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
@@ -20,7 +21,7 @@ Assertions
     Set Resolution    ${window}    1800    800
     Get Element    name:Help    timeout=5
     ${text}    Set Variable    finished
-    Click On Button With Text    ${text}    WordsForLife\\lamp84Full\\finished.png    0.6
+    Click On Button With Text    ${text}    LAMPwordsForLife\\lampWFLEnglishFull\\finished.png    0.6
 
     Check to see if the user exist
 

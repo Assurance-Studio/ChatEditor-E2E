@@ -24,20 +24,20 @@ Check that the language is associated with the available configuration for Spani
     RPA.Windows.Click    Idioma
     # Spanish and English are enabled
     ${espanolAmericano}=    Get Attribute    id:33699    IsEnabled
-    Should Be Equal    ${espanolAmericano}    1    formater=int|boolean
+    Should Contain Any    ${espanolAmericano}    1    True    "1"    "True"
      ${ingles}=    Get Attribute    id:33299    IsEnabled
-    Should Be Equal    ${ingles}    1    formater=int|boolean
+    Should Contain Any    ${ingles}    1    True    "1"    "True"
     # Other languages are disabled
     ${francesCanadiense}=    Get Attribute    id:33698    IsEnabled
-    Should Be Equal    ${francesCanadiense}    0    formater=int|boolean
+    Should Contain Any    ${francesCanadiense}    0    False    "0"    "False"
     ${holandes}=    Get Attribute    id:1405    IsEnabled
-    Should Be Equal    ${holandes}    0    formater=int|boolean
+    Should Contain Any    ${holandes}    0    False    "0"    "False"
     ${aleman}=    Get Attribute    id:33303    IsEnabled
-    Should Be Equal    ${aleman}    0    formater=int|boolean
+    Should Contain Any    ${aleman}    0    False    "0"    "False"
     ${hebreo}=    Get Attribute    id:33700    IsEnabled
-    Should Be Equal    ${hebreo}    0    formater=int|boolean
+    Should Contain Any    ${hebreo}    0    False    "0"    "False"
     ${arabe}=    Get Attribute    id:33701    IsEnabled
-    Should Be Equal    ${arabe}    0    formater=int|boolean
+    Should Contain Any    ${arabe}    0    False    "0"    "False"
 
 Check that the menus change to the Spanish
     RPA.Windows.Get Element    name:Preferencias

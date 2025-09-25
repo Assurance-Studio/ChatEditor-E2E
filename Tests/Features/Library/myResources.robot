@@ -89,7 +89,7 @@ Delete the vocabulary
     RPA.Windows.Click    id:33682
     Send Keys    id:1344    yes
     ${continue}=    Get Attribute    id:1    IsEnabled
-    Should Be Equal    ${continue}    1    formater=int|boolean
+    Should Contain Any    ${continue}    1    True    "1"    "True"
     RPA.Windows.Click    id:1
     #Check that the vocabulary is deleted
     ${result}=    Run Keyword And Ignore Error    RPA.Windows.Get Element    name:"new_vocab_renamed"

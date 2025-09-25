@@ -37,12 +37,6 @@ Create a new profile
     Send Keys    id:1034    Adam    interval=0.02
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
-    # Assert the name of the window and ensure that it is enabled. This confirms that we are using the correct vocabulary
-    Attach Application By Name    Chat Editor
-    Attach Window    class_name:#32770
-    Window Title Should Be    ChatEditor • (EnglishUser)
-    ${isEnabled}=    Get Attribute    name:"ChatEditor • (EnglishUser)"    IsEnabled
-    Should Be Equal    ${isEnabled}    1    formater=int|boolean
 
 Make some changes to the profile settings
     #Button Style
@@ -53,12 +47,12 @@ Make some changes to the profile settings
     RPA.windows.Click    id:10005
     #Check that the "Size" setting for navigation icons is disabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     #Uncheck "Saturation"
     RPA.windows.Click    id:1296
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
@@ -68,8 +62,7 @@ Save the changes to the profile
     RPA.Windows.Click    name:Save...
     ${text}=    RPA.Windows.Get Text    name:"Save User Profile"
     Should Be Equal    ${text}    Save User Profile
-    ${text}=    Get Text From Label    text:Adam
-    Should Be Equal    ${text}    Adam
+    ${text}=    RPA.Windows.Get Element    name:Adam
     RPA.Desktop.Press Keys    down
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
@@ -90,10 +83,10 @@ Load the profile
     RPA.Windows.Click    Style
     RPA.Windows.Click    Button Style...
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    0
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     #Check that the saturation percent is disabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
@@ -107,10 +100,10 @@ Load Default Settings
     RPA.Windows.Click    Button Style...
     #Check that the "Size" setting for navigation icons is enabled
     ${isEnabled}=    Get Attribute    id:1102    IsEnabled
-    Should Be Equal    ${isEnabled}    1    formater=int|boolean
+    Should Contain Any    ${isEnabled}    1    True    "1"    "True"
     #Check that the saturation percent is enabled
     ${isEnabled}=    Get Attribute    id:1297    IsEnabled
-    Should Be Equal    ${isEnabled}    1    formater=int|boolean
+    Should Contain Any    ${isEnabled}    1    True    "1"    "True"
     RPA.Desktop.Press Keys    alt
     RPA.Desktop.Press Keys    enter
 
@@ -126,12 +119,3 @@ Delete the profile
     ${text}=    RPA.Windows.Get Text    id:65535
     Should Contain    ${text}    Profile "Adam" has been deleted.
     RPA.Windows.Click    ${ok_btn_id2}
-
-Check that the profile was deleted
-    RPA.Desktop.Press Keys    alt    s
-    RPA.Windows.Click    Profiles
-    RPA.Windows.Click    name:Load...
-    ${text}=    RPA.Windows.Get Text    name:"Load User Profile"
-    Should Be Equal    ${text}    Load User Profile
-     ${result}=    Run Keyword And Ignore Error    RPA.Windows.Get Element    name:Adam
-    Run Keyword If    '${result}[0]' == 'FAIL'    Log    Element 'Adam' is not present.

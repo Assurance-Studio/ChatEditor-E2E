@@ -22,8 +22,8 @@ Assertions for "WordPower60 français PCS" FRANCAISE vocabulary
     # Click on a button's text - WordPower60 français PCS
     Set Resolution    ${windowFrançais}    1800    800
     Get Element    name:Aide    timeout=5
-    ${text}    Set Variable    GENS
-    Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\wordPower60FrancaisPCS\\gens.png    0.6
+    ${text}    Set Variable    ABC123
+    Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\wordPower60FrancaisPCS\\abc123.png    0.6
 
     Check to see if the user exist - FrançaisUser
 

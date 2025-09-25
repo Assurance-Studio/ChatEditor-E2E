@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Check "LAMP WFL - English 1-Hit" ENGLISH vocabulary
-Resource            ../../../../../Resources/resources.robot
-Resource            ../../../../../Resources/vocabularyAssertions.robot
+Resource            ../../../../Resources/resources.robot
+Resource            ../../../../Resources/vocabularyAssertions.robot
 
 Suite Setup         Run Keywords    Delete Chat Editor Folder    AND    Open ChatEditor
 Suite Teardown      Close ChatEditor
@@ -10,6 +10,7 @@ Suite Teardown      Close ChatEditor
 Validate "LAMP WFL - English 1-Hit" vocabulary
     Create new configuration of ChatEditor
     Select Words For Life (Nova Edition)
+    Select language    ${english}
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
@@ -20,7 +21,7 @@ Assertions
     Set Resolution    ${window}    1800    800
     Get Element    name:Help    timeout=5
     ${text}    Set Variable    little
-    Click On Button With Text    ${text}    WordsForLife\\lamp84OneHit\\little.png    0.6
+    Click On Button With Text    ${text}    LAMPwordsForLife\\lampWFLEnglish1Hit\\little.png    0.6
     ${message}=    RPA.Windows.Get Value    id:1000
     Should Contain    ${message}    Little
 

@@ -28,7 +28,7 @@ Reach "Prediction" modal
 Uncheck "Static Prediction" features
     RPA.Windows.Click    id:1064
     ${isEnabled}=    Get Attribute    id:1001    IsEnabled
-    Should Be Equal    ${isEnabled}    0    formater=int|boolean
+    Should Contain Any    ${isEnabled}    0    False    "0"    "False"
 
 Set prediction to "British English"
     RPA.Windows.Click    id:1064
