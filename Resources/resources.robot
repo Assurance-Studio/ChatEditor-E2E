@@ -36,6 +36,7 @@ ${NovaChat/ChatFusion}                           name:"Nova Chat/Chat Fusion"
 ${TouchChat}                                     name:TouchChat
 ${LAMPwordsForLife}                              name:"LAMP Words For Life"
 ${dialogue}                                      name:Dialogue
+${unity}                                         name:"Unity (iOS app)"
 
 # Languages
 ${english}                                       name:English
@@ -139,6 +140,15 @@ ${engage}                                        name:Engage
 ${essence60}                                     name:"Essence 60"
 ${essence84}                                     name:"Essence 84"
 ${pixon}                                         name:"Pixon"
+${engage}                                        name:Engage
+${unity28_1-Hit}                                 name:"Unity 28 1-Hit"
+${unity36_1-Hit}                                 name:"Unity 36 1-Hit"
+${unity60_1-Hit}                                 name:"Unity 60 1-Hit"
+${unity84_1-Hit}                                 name:"Unity 84 1-Hit"
+${unity28Sequenced}                              name:"Unity 28 Sequenced"
+${unity36Sequenced}                              name:"Unity 36 Sequenced"
+${unity60Sequenced}                              name:"Unity 60 Sequenced"
+${unity84Sequenced}                              name:"Unity 84 Sequenced"
 
 # English&Nederlands vocabularies
 ${myQuickChat4KinddSS}                           name:"myQuickChat 4 Kind SS"
@@ -278,6 +288,12 @@ Select Dialogue
     RPA.Windows.Click    ${productDropbox}
     RPA.Windows.Click    ${dialogue}
     RPA.Windows.Click    id:1592
+
+Select Unity
+    RPA.Windows.Click    ${productDropbox}
+    RPA.Windows.Click    ${unity}
+    RPA.Windows.Click    id:1592
+
 # ----------------------------------LANGUAGES-----------------------------------------------------
 Select language
     [Arguments]          ${language}
