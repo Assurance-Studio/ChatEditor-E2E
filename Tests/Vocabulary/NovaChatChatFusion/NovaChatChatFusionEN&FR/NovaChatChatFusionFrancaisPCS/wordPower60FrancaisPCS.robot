@@ -23,7 +23,6 @@ Assertions for "WordPower60 français PCS" FRANCAISE vocabulary
     Get Element    name:Bibliothèque    timeout=5
     Set Resolution    ${windowFrançais}    1800    800
     Get Element    name:Aide    timeout=5
-    Pause Execution
     ${text}    Set Variable    GENS
     Click On Button With Text    ${text}    NovaChatChatFusion\\NovaChatChatFusionEnglish&Francais\\wordPower60FrancaisPCS\\gens.png    0.6
 
