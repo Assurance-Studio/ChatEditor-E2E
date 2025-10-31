@@ -15,7 +15,7 @@ Validate "Engage PCS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:PCS     ${engagePCS}
+    Select vocabulary    name:English    name:PCS    name:ToolBox     ${engagePCS}
 
 Assertions
     # Click on a button's text - Engage PCS
@@ -36,5 +36,6 @@ Assertions
     RPA.Desktop.Press Keys    alt    l
     RPA.Windows.Click    name:English
     RPA.Windows.Click    name:PCS
+    RPA.Windows.Click    name:ToolBox
     ${name}=    RPA.Windows.Get Attribute    name:"Engage PCS (Current)"    Name
     Should Be Equal    ${name}    Engage PCS (Current)

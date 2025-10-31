@@ -24,10 +24,10 @@ Assertions for "ABC 50 Metacom 3.0" DEUTSCH vocabulary
     # Click on a button's text - ABC 50 Metacom    3.0
     Set Resolution    ${windowDeutsch}    1800    800
     Get Element    name:Hilfe    timeout=5
-    ${text}=    Set Variable    GROSS
+    ${text}=    Set Variable    THEMEN
     Click On Button With Text
     ...    ${text}
-    ...    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\ABC45Metacom_3.0\\gross.png
+    ...    NovaChatChatFusion\\NovaChatChatFusionEnglish&Deutsch\\ABC50Metacom_3.0\\themen.png
     ...    0.6
 
     Check to see if the user exist - DeutschUser

@@ -15,7 +15,7 @@ Validate "Engage SS" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:SymbolStix    ${engageSS}
+    Select vocabulary    name:English    name:SymbolStix    name:ToolBox    ${engageSS}
 
 Assertions
     # Click on a button's text - Engage SS
@@ -36,5 +36,6 @@ Assertions
     RPA.Desktop.Press Keys    alt    l
     RPA.Windows.Click    name:English
     RPA.Windows.Click    name:SymbolStix
+    RPA.Windows.Click    name:ToolBox
     ${name}=    RPA.Windows.Get Attribute    name:"Engage SS (Current)"    Name
     Should Be Equal    ${name}    Engage SS (Current)
