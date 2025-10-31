@@ -15,7 +15,7 @@ Validate "Engage" vocabulary
     Create user                EnglishUser
     Maximize the window
     Reach Library of vocabs    l
-    Select vocabulary    name:English    name:LAMP    ${engage}
+    Select vocabulary    name:English    name:ToolBox    ${engage}
 
 Assertions
     # Click on a button's text - Engage
@@ -35,6 +35,6 @@ Assertions
     # Check to see if the dictionary's 'name' attribute is its actual name - Engage
     RPA.Desktop.Press Keys    alt    l
     RPA.Windows.Click    name:English
-    RPA.Windows.Click    name:LAMP
+    RPA.Windows.Click    name:ToolBox
     ${name}=    RPA.Windows.Get Attribute    name:"Engage (Current)"    Name
     Should Be Equal    ${name}    Engage (Current)
